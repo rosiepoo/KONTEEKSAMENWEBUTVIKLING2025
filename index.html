@@ -24,7 +24,7 @@
             </ul>
             <nav>
                 <ul>
-                    <li><a href="#">Tips og inspirasjon</a></li>
+                    <li><a href="#tips-og-inspo">Tips og inspirasjon</a></li>
                     <li><a href="hotell.html">Hotell</a></li>
                     <li><a href="https://www.norwegian.no/" target="_blank">Fly</a></li>
                     <li><a href="#global-footer">Kontakt</a></li>
@@ -32,7 +32,133 @@
             </nav>
         </header>
         <main>
+            <header id="frontpage-header">
+                <section>
+                    <img src="img/sea-4768869_1920.jpg" alt="#remember">
+                    <article>
+                        <h4>Bestill sommerens beste uke</h4>
+                        <p>Fly + hotell, 7 dager</p>
+                        <p>Fra 3 298,-</p>
+                        <a href="hotell.html">Bestill i dag</a>
+                    </article>
+                </section>
+                <section>
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-suitcase"></i> Fly + Hotell</a></li>
+                        <li><a href="#"><i class="fa-solid fa-plane"></i> Fly</a></li>
+                        <li><a href="#"><i class="fa-solid fa-city"></i> Storby</a></li>
+                        <li><a href="#"><i class="fa-solid fa-person-skiing"></i> Ski</a></li>
+                        <li><a href="#"><i class="fa-solid fa-map-location-dot"></i> Kombinasjonsreiser</a></li>
+                    </ul>
+                    <form class="order-form" action="#" method="POST">
+                        <label for="fromDestination">Fra</label>
+                        <select id="fromDestination" name="fromDestination" required>
+                            <option value="osloAirport">Oslo Lufthavn</option>
+                            <option value="torpSAirport">Torp Sandefjord Lufthavn</option>
+                            <option value="bergenAirport">Bergen Lufthavn</option>
+                            <option value="altaAirport">Alta Lufthavn</option>
+                        </select>
 
+                        <label for="toDestination">Til</label>
+                        <select id="toDestination" name="toDestination" required>
+                            <option value="albania">Albania</option>
+                            <option value="denmark">Danmark</option>
+                            <option value="finland">Finland</option>
+                            <option value="greece">Hellas</option>
+                        </select>
+
+                        <label for="travelDuration">Reiselengde</label>
+                        <select id="travelDuration" name="travelDuration" required>
+                            <option value="lessThanOne">Mindre enn 1 uke</option>
+                            <option value="oneWeek">1 Uke</option>
+                            <option value="twoWeeks">2 Uker</option>
+                            <option value="moreThanTwo">Mer enn 2 uker</option>
+                        </select>
+
+                        <label for="travelDate">Velg dato</label>
+                        <input type="date" min="2025-01-01" max="2026-12-31" required>
+
+                        <label for="amountTravellers">Antall reisende</label>
+                        <input type="number" min="1" max="100" required>
+
+                        <input type="submit" value="Søk">
+                    </form>
+                </section>
+            </header>
+
+            <section id="deal-section">
+                <h2>Kampanjeseksjon</h2>
+                <img src="img/holiday-2733322_1280.jpg" alt="#remember">
+            </section>
+
+            <section id="sale-section">
+                <h2>Tilbudseksjon</h2>
+                <article>
+                    <h3>Få ekslusive tilbud</h3>
+                    <a href="#">Logg inn/opprett konto og få rabattkoder <i class="fa-solid fa-angles-right"></i></a>
+                </article>
+                <article>
+                    <h3>Billige resteplasser</h3>
+                    <a href="#">Opptil 50% rabatt <i class="fa-solid fa-angles-right"></i></a>
+                </article>
+                <article>
+                    <h3>Mars - spar opptil 5000,-</h3>
+                    <a href="#">Sikre deg et feriekupp <i class="fa-solid fa-angles-right"></i></a>
+                </article>
+            </section>
+            <section id="tips-og-inspo">
+                <h2>Tips &amp; inspirasjon</h2>
+                <article>
+                    <picture>
+                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Greske favoritter</h3>
+                    <p id="deal-of-the-week-tag">Ukens deals</p>
+                    <p>Akkurat nå får du 1 000,- i rabatt per bestilling til bl.a. Parga, Sivota, Lefkas, Korfu og Kalamata i Hellas. Gjelder avreiser i sommer 2025. Kampanje er gyldig i perioden 3/1 - 12/1-2025. Bruk rabattkoden WEEKDEAL ved bestilling.</p>
+                    <a href="#">Fra kr 3 970 <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+                <article>
+                    <picture>
+                        <img src="img/beach-1836467_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Solskinnspriser - bestill i dag!</h3>
+                    <p>Spar opptil 45%. Akkurat nå tilbyr vi bullige vinterreiser til mange reisemål. Bestill vinterens herligste uke i dag!</p>
+                    <a href="#">Fra kr 3 203 <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+                <article>
+                    <picture>
+                        <img src="img/cathedral-427997_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Storbyferie</h3>
+                    <p>Bestill en langhelg og unn deg en flott weekendreise i en storby der du selv velger reiselengde, fly og nøye utvalgte hotell.</p>
+                    <a href="#">Les mer <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+                <article>
+                    <picture>
+                        <img src="img/building-7014904_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Besøk påskefavoritten London</h3>
+                    <p>London er en av de mest populære reisemålene i påsken, kjent for sin unike blanding av historie, kultur og moderne opplevelser.</p>
+                    <a href="#">Fra kr 2 150 <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+                <article>
+                    <picture>
+                        <img src="img/ski-slope-3223709_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Skiferie</h3>
+                    <p id="new-tag">Nyhet</p>
+                    <p>Drømmer du om en puddersnø, frisk fjelluft og fartsfylte nedfarter? Vinteren er endelig her, og det betyr at skisesongen er i full gang!</p>
+                    <a href="#">Se alle skistedene <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+                <article>
+                    <picture>
+                        <img src="img/beach-666122_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Spar opptil 7000,- til sommer</h3>
+                    <p>Drømmer du om solfylte dager og eksotiske opplevelser? Nå har du sjansen til å sikre deg din drømmeferie til en fantastisk pris!</p>
+                    <a href="#">Les mer <i class="fa-solid fa-arrow-right"></i></a>
+                </article>
+            </section>
         </main>
         <footer id="global-footer">
             <section>
@@ -58,11 +184,9 @@
             <section>
                 <h3>Nyheter og tilbud</h3>
                 <form>
-                    <fieldset>
-                        <Legend>Meld deg på nyhetsbrev her</Legend>
-                        <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
-                        <input type="submit" value="Send">
-                    </fieldset>
+                    <label for="email">Meld deg på nyhetsbrev her</label>
+                    <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
+                    <input type="submit" value="Send">
                 </form>
                 <a href="#">Kjøp reisegavekort</a>
             </section>
