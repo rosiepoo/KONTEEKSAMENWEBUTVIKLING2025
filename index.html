@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="icons/css/fontawesome.css" rel="stylesheet" />
-    <link href="icons/css/brands.css" rel="stylesheet" />
-    <link href="icons/css/solid.css" rel="stylesheet" />
+    <link href="icons/css/fontawesome.css" rel="stylesheet">
+    <link href="icons/css/brands.css" rel="stylesheet">
+    <link href="icons/css/solid.css" rel="stylesheet">
+    <link href="icons/css/regular.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com" rel="preconnect" >
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
     <title>Forside</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container frontpage">
         <header id="global-header">
             <nav>
                 <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
@@ -26,7 +27,7 @@
                 </ul>
                 <ul class="flex-menu" id="burger-menu">
                     <li><a href="#tips-og-inspo">Tips og inspirasjon</a></li>
-                    <li><a href="hotell.html">Hotell</a></li>
+                    <li><a href="hotel.html">Hotell</a></li>
                     <li><a href="https://www.norwegian.no/" target="_blank">Fly</a></li>
                     <li><a href="#global-footer">Kontakt</a></li>
                 </ul>
@@ -39,13 +40,17 @@
                 </section>
                 <section id="order-form">
                     <h2 class="hidden">Bestillingskjema</h2>
-                    <ul class="scroll order-menu">
-                        <li class="scroll-category"><a href="#"><i class="fa-solid fa-suitcase"></i> Fly + Hotell</a></li>
-                        <li class="scroll-category"><a href="#"><i class="fa-solid fa-plane"></i> Fly</a></li>
-                        <li class="scroll-category"><a href="#"><i class="fa-solid fa-city"></i> Storby</a></li>
-                        <li class="scroll-category"><a href="#"><i class="fa-solid fa-person-skiing"></i> Ski</a></li>
-                        <li class="scroll-category"><a href="#"><i class="fa-solid fa-map-location-dot"></i> Kombinasjonsreiser</a></li>
-                    </ul>
+                    <nav class="scroll nav">
+                        <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <ul class="scroll order-menu">
+                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-suitcase"></i> Fly + Hotell</a></li>
+                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-plane"></i> Fly</a></li>
+                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-city"></i> Storby</a></li>
+                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-person-skiing"></i> Ski</a></li>
+                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-map-location-dot"></i> Kombinasjonsreiser</a></li>
+                        </ul>
+                        <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                    </nav>
                     <form id="form-layout" action="#" method="POST">
                         <label class="border-container" for="fromDestination" id="fromDestinationLabel"> 
                             <span class="text-labels">Fra</span>
@@ -82,7 +87,7 @@
 
                         <label class="border-container" for="travelDate" id="travelDateLabel">
                             <span class="text-labels">Velg dato</span>
-                            <input class="border-style" id="travelDate" type="date" min="2025-01-01" max="2026-12-31" required>
+                            <input class="border-style" id="travelDate" name="travelDate" type="date" min="2025-01-01" max="2026-12-31" required>
                         </label>
                         
                         <label class="border-container" for="amountTravellers" id="amountTravellersLabel">
@@ -101,11 +106,11 @@
                     <h4>Bestill sommerens beste uke</h4>
                     <p>Fly + hotell, 7 dager</p>
                     <p>Fra 3 298,-</p>
-                    <a href="hotell.html" class="button">Bestill i dag</a>
+                    <a href="hotel.html" class="button">Bestill i dag</a>
                 </article>
             </section>
 
-            <section class="scroll" id="sale-section">
+            <section class="scroll offers" id="sale-section">
                 <h2 class="hidden">Tilbudseksjon</h2>
                 <article class="article-cards">
                     <h3>Få ekslusive tilbud</h3>

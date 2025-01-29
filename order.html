@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="icons/css/fontawesome.css" rel="stylesheet" />
-    <link href="icons/css/brands.css" rel="stylesheet" />
-    <link href="icons/css/solid.css" rel="stylesheet" />
+    <link href="icons/css/fontawesome.css" rel="stylesheet">
+    <link href="icons/css/brands.css" rel="stylesheet">
+    <link href="icons/css/solid.css" rel="stylesheet">
+    <link href="icons/css/regular.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com" rel="preconnect" >
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
     <title>Bestilling</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container orderpage">
         <header id="global-header">
             <nav>
                 <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
@@ -26,7 +27,7 @@
                 </ul>
                 <ul class="flex-menu" id="burger-menu">
                     <li><a href="#tips-og-inspo">Tips og inspirasjon</a></li>
-                    <li><a href="hotell.html">Hotell</a></li>
+                    <li><a href="hotel.html">Hotell</a></li>
                     <li><a href="https://www.norwegian.no/" target="_blank">Fly</a></li>
                     <li><a href="#global-footer">Kontakt</a></li>
                 </ul>
@@ -86,5 +87,15 @@
             </section>
         </footer>
     </div>
+    <script>
+        let toggleMenu = () => {
+            let x = document.getElementById("burger-menu");
+                if (x.style.display === "flex") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "flex";
+            }
+        }
+    </script>
 </body>
 </html>

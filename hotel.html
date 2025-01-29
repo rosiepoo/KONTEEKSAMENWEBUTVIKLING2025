@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="icons/css/fontawesome.css" rel="stylesheet">
+    <link href="icons/css/brands.css" rel="stylesheet">
+    <link href="icons/css/solid.css" rel="stylesheet">
+    <link href="icons/css/regular.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="img/fav.png" rel="icon">
+    <title>Hotell</title>
+</head>
+<body>
+    <div class="container hotelpage">
+        <header id="global-header">
+            <nav>
+                <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
+                <ul class="flex-menu" id="header-menu">
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li class="hidden"><a href="#">Oprett konto</a></li>
+                    <li><a href="#"><i class="fa-regular fa-circle-user"></i><span class="hidden">Min konto</span></a></li>
+                    <li><button class="button-burger"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
+                </ul>
+                <ul class="flex-menu" id="burger-menu">
+                    <li><a href="#tips-og-inspo">Tips og inspirasjon</a></li>
+                    <li><a href="hotel.html">Hotell</a></li>
+                    <li><a href="https://www.norwegian.no/" target="_blank">Fly</a></li>
+                    <li><a href="#global-footer">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <header id="hotel-header">
+                <section id="photo-gallery">
+                    <picture class="slides">
+                        <img src="img/landscape-2016308_640.jpg" alt="#remember">
+                    </picture>
+                    <picture class="slides">
+                        <img src="img/beach-666122_640.jpg" alt="#remember">
+                    </picture>
+                    <picture class="slides">
+                        <img src="img/holiday-2733322_1280.jpg" alt="#remember">
+                    </picture>
+                    <picture class="slides">
+                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                    </picture>
+                    <picture class="slides">
+                        <img src="img/beach-1836467_640.jpg" alt="#remember">
+                    </picture>
+                    <picture class="slides">
+                        <img src="img/sea-4768869_1920.jpg" alt="#remember">
+                    </picture>
+                    <button class="prev" onclick="plusDivs(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="next" onclick="plusDivs(+1)"><i class="fa-solid fa-chevron-right"></i></Button>
+                    <button id="heart"><i class="fa-regular fa-heart"></i></button>
+                    <button id="image-count"><i class="fa-regular fa-images"></i><span>49</span></button>
+                </section>
+                <nav>
+                    <ul class="flex-menu" id="hoteltabs">
+                        <li class="active"><a href="#summary">Oversikt</a></li>
+                        <li><a href="#facilities">Fasiliteter</a></li>
+                        <li><a href="#choose-room">Rom</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="summary">
+                <h2>Parga beach</h2>
+                <p id="sun-icons"><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-regular fa-sun"></i></p>
+                <p class="rating"><span>8.9</span> Fantastisk</p>
+                <a href="#">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
+            </section>
+            <section id="facilities">
+                <h2>Fasiliteter</h2>
+                <p id="description">Parga Beach tilbyr et tilsynelatende uuttømmelig utvalg av sport og aktiviteter 
+                    og lokker til seg så vel eliteutøvere som aktive familer og hverdsagsmosjoniser 
+                    - i alle eldre og på alle nivåer.</p>
+                <p id="facilityone"><i class="fa-solid fa-paw"></i> Kjæledyr-vennelig<br>
+                    <i class="fa-solid fa-mug-hot"></i> Frokost<br>
+                    <i class="fa-solid fa-spa"></i> Spa
+                </p>
+                <p id="facilitytwo"><i class="fa-solid fa-bell-concierge"></i> Romservice<br>
+                    <i class="fa-solid fa-martini-glass"></i> Bar<br>
+                    <i class="fa-solid fa-dumbbell"></i> Treningssenter
+                </p>
+                <a href="#">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
+            </section>
+            <section id="choose-room">
+                <h2>Velg rom</h2>
+                <article class="article-cards">
+                    <picture>
+                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Junior Suite</h3>
+                    <p>Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
+                    <p class="rating"><span>8.9</span> 59 anmeldelser</p>
+                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Ink. moms og avgifter</p>
+                </article>
+                <article class="article-cards">
+                    <picture>
+                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Junior Suite</h3>
+                    <p>Plass til 2 <span class="dot">&#x2022;</span> Queen size-seng</p>
+                    <p class="rating"><span>8.9</span> 59 anmeldelser</p>
+                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Ink. moms og avgifter</p>
+                </article>
+                <article class="article-cards">
+                    <picture>
+                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Junior Suite</h3>
+                    <p>Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
+                    <p class="rating"><span>8.9</span> 59 anmeldelser</p>
+                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Ink. moms og avgifter</p>
+                </article>
+                <article class="article-cards">
+                    <picture>
+                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                    </picture>
+                    <h3>Junior Suite</h3>
+                    <p>Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
+                    <p class="rating"><span>8.9</span> 59 anmeldelser</p>
+                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Ink. moms og avgifter</p>
+                </article>
+            </section>
+            <aside id="map">
+                <h2>Utforsk området</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5806.814338490057!2d20.38392041975443!3d39.28621533916043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135c632e49c7cda5%3A0x9406a292c1e28ae2!2sParga%20Beach%20Resort!5e0!3m2!1sen!2sno!4v1737832892167!5m2!1sen!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </aside>
+        </main>
+        <footer id="global-footer">
+            <section id="footer-countries">
+                <h3 class="hidden">Land</h3>
+                <ul class="flex-menu" id="flag-menu">
+                    <li><img src="flags/sweden.png" alt="Flag of Sweden">Sverige</li>
+                    <li><img src="flags/denmark.png" alt="Flag of Denmark">Danmark</li>
+                    <li><img src="flags/norway.png" alt="Flag of Norway">Norge</li>
+                    <li><img src="flags/material.png" alt="Flag of Finland">Suomi</li>
+                    <li><img src="flags/netherlands.png" alt="Flag of Netherlands">Nederland</li>
+                </ul>
+            </section>
+            <section id="footer-payment">
+                <h3>Betalingsmetoder</h3>
+                <ul class="flex-menu">
+                    <li><i class="fa-brands fa-cc-visa"></i></li>
+                    <li><i class="fa-brands fa-cc-mastercard"></i></li>
+                    <li><i class="fa-brands fa-cc-paypal"></i></li>
+                    <li><i class="fa-brands fa-cc-apple-pay"></i></li>
+                    <li><i class="fa-brands fa-cc-amazon-pay"></i></li>
+                </ul>
+            </section>
+            <section id="footer-news">
+                <h3>Nyheter og tilbud</h3>
+                <form class="border-container">
+                    <label for="email" class="text-labels">Meld deg på nyhetsbrev her</label>
+                    <input class="border-style" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
+                    <input class="button" type="submit" value="Send" id="email-send">
+                </form>
+                <a href="#">Kjøp reisegavekort</a>
+            </section>
+            <section id="footer-customerservice">
+                <h3>Kundeservice</h3>
+                <ul>
+                    <li><a href="#">Spørsmål og Svar</a></li>
+                    <li><a href="#">Chat</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Tilgjgenlighetserklæring</a></li>
+                </ul>
+            </section>
+            <section id="footer-socialmedia">
+                <h3>Sosiale medier</h3>
+                <ul class="flex-menu">
+                    <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a></li>
+                    <li><a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </section>
+        </footer>
+    </div>
+    <script>
+        let toggleMenu = () => {
+            let x = document.getElementById("burger-menu");
+                if (x.style.display === "flex") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "flex";
+            }
+        }
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("slides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+        }
+
+        const navItems = document.querySelectorAll('#hoteltabs li');
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navItems.forEach(i => i.classList.remove('active'));
+        
+            item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
