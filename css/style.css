@@ -157,6 +157,40 @@ i{
     }
 }
 
+.scroll{
+    display: flex;
+    overflow-x: scroll;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    max-height: 300px;
+
+    .article-cards {
+        height: 100%;
+    }
+}
+.scroll.order-menu {
+    max-height: 50px;
+    flex-wrap: nowrap;
+}
+.scroll-category{
+    display: flex;
+    align-items: center;
+    
+    
+    a{
+        display: flex;
+        font-size: 1rem;
+        align-items: center;
+        margin-right: 25px;
+
+        i{
+            margin-right: 10px;
+        }
+    }
+}
+
 
 
 /* page styling */
@@ -372,18 +406,7 @@ i{
     
 }
 
-#sale-section {
-    overflow: scroll;
-    gap: 1rem;
-    padding: 1rem;
-    flex-wrap: wrap;
-    white-space: nowrap;
-    max-height: 300px;
 
-    .article-cards {
-        height: 100%;
-    }
-}
 
 #tips-og-inspo {
     padding: 1rem;

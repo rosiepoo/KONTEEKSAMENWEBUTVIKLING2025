@@ -35,10 +35,11 @@
         <main>
             <header id="frontpage-header">
                 <section id="banner">
-                    <h1 class="hidden">Bestillingskjema</h1>
+                    <h1 class="hidden">Banner</h1>
                 </section>
                 <section id="order-form">
-                    <ul class="flex-menu" id="orderCategories">
+                    <h2 class="hidden">Bestillingskjema</h2>
+                    <ul class="scroll order-menu">
                         <li class="scroll-category"><a href="#"><i class="fa-solid fa-suitcase"></i> Fly + Hotell</a></li>
                         <li class="scroll-category"><a href="#"><i class="fa-solid fa-plane"></i> Fly</a></li>
                         <li class="scroll-category"><a href="#"><i class="fa-solid fa-city"></i> Storby</a></li>
@@ -49,6 +50,7 @@
                         <label class="border-container" for="fromDestination" id="fromDestinationLabel"> 
                             <span class="text-labels">Fra</span>
                             <select class="border-style" id="fromDestination" name="fromDestination" required>
+                                <option value="">Velg lufthavn...</option>
                                 <option value="osloAirport">Oslo Lufthavn</option>
                                 <option value="torpSAirport">Torp Sandefjord Lufthavn</option>
                                 <option value="bergenAirport">Bergen Lufthavn</option>
@@ -59,6 +61,7 @@
                         <label class="border-container" for="toDestination" id="toDestinationLabel">
                             <span class="text-labels">Til</span>
                             <select class="border-style" id="toDestination" name="toDestination" required>
+                                <option value="">Velg land...</option>
                                 <option value="albania">Albania</option>
                                 <option value="denmark">Danmark</option>
                                 <option value="finland">Finland</option>
@@ -69,6 +72,7 @@
                         <label class="border-container" for="travelDuration" id="travelDurationLabel">
                             <span class="text-labels">Reiselengde</span>
                             <select class="border-style" id="travelDuration" name="travelDuration" required>
+                                <option value="">Velg reiselengde...</option>
                                 <option value="lessThanOne">Mindre enn 1 uke</option>
                                 <option value="oneWeek">1 Uke</option>
                                 <option value="twoWeeks">2 Uker</option>
@@ -78,12 +82,12 @@
 
                         <label class="border-container" for="travelDate" id="travelDateLabel">
                             <span class="text-labels">Velg dato</span>
-                            <input class="border-style" type="date" min="2025-01-01" max="2026-12-31" required>
+                            <input class="border-style" id="travelDate" type="date" min="2025-01-01" max="2026-12-31" required>
                         </label>
                         
                         <label class="border-container" for="amountTravellers" id="amountTravellersLabel">
                             <span class="text-labels">Antall reisende</span>
-                            <input class="border-style" type="number" min="1" max="100" required>
+                            <input class="border-style" id="amountTravellers" type="number" min="1" max="100" required>
                         </label>
         
                         <input type="submit" value="Søk" id="searchTravel" class="button">
@@ -101,7 +105,7 @@
                 </article>
             </section>
 
-            <section id="sale-section">
+            <section class="scroll" id="sale-section">
                 <h2 class="hidden">Tilbudseksjon</h2>
                 <article class="article-cards">
                     <h3>Få ekslusive tilbud</h3>
