@@ -10,21 +10,22 @@
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="img/fav.png" rel="icon">
     <title>Hotell</title>
 </head>
 <body>
-    <div>
+    <div class="container">
         <header id="global-header">
-            <img src="img/fav.png" alt="Logo for website">
-            <ul>
-                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href="#">Oprett konto</a></li>
-                <li><a href="#"><i class="fa-regular fa-circle-user"></i> Min konto</a></li>
-                <li><i class="fa-solid fa-bars"></i></li>
-            </ul>
             <nav>
-                <ul>
-                    <li><a href="index.html#tips-og-inspo">Tips og inspirasjon</a></li>
+                <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
+                <ul class="flex-menu" id="header-menu">
+                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li class="hidden"><a href="#">Oprett konto</a></li>
+                    <li><a href="#"><i class="fa-regular fa-circle-user"></i><span class="hidden">Min konto</span></a></li>
+                    <li><button class="button-burger"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
+                </ul>
+                <ul class="flex-menu" id="burger-menu">
+                    <li><a href="#tips-og-inspo">Tips og inspirasjon</a></li>
                     <li><a href="hotell.html">Hotell</a></li>
                     <li><a href="https://www.norwegian.no/" target="_blank">Fly</a></li>
                     <li><a href="#global-footer">Kontakt</a></li>
@@ -35,9 +36,9 @@
 
         </main>
         <footer id="global-footer">
-            <section>
-                <h3>Land</h3>
-                <ul>
+            <section id="footer-countries">
+                <h3 class="hidden">Land</h3>
+                <ul class="flex-menu" id="flag-menu">
                     <li><img src="flags/sweden.png" alt="Flag of Sweden">Sverige</li>
                     <li><img src="flags/denmark.png" alt="Flag of Denmark">Danmark</li>
                     <li><img src="flags/norway.png" alt="Flag of Norway">Norge</li>
@@ -45,9 +46,9 @@
                     <li><img src="flags/netherlands.png" alt="Flag of Netherlands">Nederland</li>
                 </ul>
             </section>
-            <section>
+            <section id="footer-payment">
                 <h3>Betalingsmetoder</h3>
-                <ul>
+                <ul class="flex-menu">
                     <li><i class="fa-brands fa-cc-visa"></i></li>
                     <li><i class="fa-brands fa-cc-mastercard"></i></li>
                     <li><i class="fa-brands fa-cc-paypal"></i></li>
@@ -55,18 +56,16 @@
                     <li><i class="fa-brands fa-cc-amazon-pay"></i></li>
                 </ul>
             </section>
-            <section>
+            <section id="footer-news">
                 <h3>Nyheter og tilbud</h3>
-                <form>
-                    <fieldset>
-                        <Legend>Meld deg på nyhetsbrev her</Legend>
-                        <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
-                        <input type="submit" value="Send">
-                    </fieldset>
+                <form class="border-container">
+                    <label for="email" class="text-labels">Meld deg på nyhetsbrev her</label>
+                    <input class="border-style" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
+                    <input class="button" type="submit" value="Send" id="email-send">
                 </form>
                 <a href="#">Kjøp reisegavekort</a>
             </section>
-            <section>
+            <section id="footer-customerservice">
                 <h3>Kundeservice</h3>
                 <ul>
                     <li><a href="#">Spørsmål og Svar</a></li>
@@ -75,14 +74,14 @@
                     <li><a href="#">Tilgjgenlighetserklæring</a></li>
                 </ul>
             </section>
-            <section>
+            <section id="footer-socialmedia">
                 <h3>Sosiale medier</h3>
-                <ul>
+                <ul class="flex-menu">
                     <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
                     <li><a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a></li>
                     <li><a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
-                    <li><a href="https://www.youtube.com/" target="_blank"></a><i class="fa-brands fa-youtube"></i></li>
+                    <li><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
                 </ul>
             </section>
         </footer>
