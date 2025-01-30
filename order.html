@@ -21,7 +21,7 @@
                 <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
                 <ul class="flex-menu" id="header-menu">
                     <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li class="hidden"><a href="#">Oprett konto</a></li>
+                    <li class="hidden"><a href="#">Opprett konto</a></li>
                     <li><a href="#"><i class="fa-regular fa-circle-user"></i><span class="hidden">Min konto</span></a></li>
                     <li><button class="button-burger"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
                 </ul>
@@ -34,7 +34,97 @@
             </nav>
         </header>
         <main>
-
+            <header>
+                <nav class="scroll-container" id="order-nav">
+                    <ul class="scroll-element">
+                        <li class="scroll-item"><a href="index.html#order-form">Søk </a><i class="fa-solid fa-chevron-right"></i></li>
+                        <li class="scroll-item"><a href="hotel.html">Søkeresultater </a><i class="fa-solid fa-chevron-right"></i></li>
+                        <li class="scroll-item"><a href="hotel.html#choose-room">Rom </a><i class="fa-solid fa-chevron-right"></i></li>
+                        <li class="scroll-item"><a href="https://www.norwegian.no" target="_blank">Fly </a><i class="fa-solid fa-chevron-right"></i></li>
+                        <li class="scroll-item"><a href="#">Tillegg </a><i class="fa-solid fa-chevron-right"></i></li>
+                        <li class="scroll-item"><a href="order.html">OPPLYSNINGER </a><i class="fa-solid fa-chevron-right"></i></li>
+                        <li class="scroll-item"><a href="#last-step">Bestill</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <aside id="your-choices" class="article-cards">
+                <h2>Dine valg <i class="fa-solid fa-chevron-right"></i></h2>
+            </aside>
+            <section>
+                <h1>Oppgi dine bestillingsopplysninger</h1>
+                <form id="final-order" action="#" method="POST">
+                    <fieldset class="order-section">
+                        <legend class="big-legend">Voksen 18+ hovedbestiller</legend>
+                        <label for="first-name">Fornavn (ifølge pass):</label>
+                        <input class="full-width-input" type="text" id="first-name" name="first-name" required>
+                        <label for="last-name">Etternavn (ifølge pass):</label>
+                        <input class="full-width-input" type="text" id="last-name" name="last-name" required>
+                        <fieldset class="birthdate">
+                            <legend>Fødselsdato:</legend>
+                            <input type="number" class="day" min="1" max="31" placeholder="DD" required>
+                            <input type="number" class="month" min="1" max="12" placeholder="MM" required>
+                            <input type="number" class="year" min="1900" max="2006" placeholder="ÅÅÅÅ" required>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Kjønn:</legend>
+                            <label for="female" class="radio-labels">
+                                <input type="radio" id="female" name="gender" value="female" required>
+                                Kvinne
+                            </label>
+                            <label for="male" class="radio-labels">
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                Mann
+                            </label>
+                        </fieldset>
+                        <label for="e-mail">E-postadresse:</label>
+                        <input class="full-width-input" type="email" id="e-mail" name="e-mail" required>
+                        <label for="telephone">Telefonnummer:</label>
+                        <input class="full-width-input"  type="tel" id="telephone" name="telephone" required>
+                        <label for="address">Gateadresse:</label>
+                        <input class="full-width-input" type="text" id="address" name="address" required>
+                        <label for="zip-code" class="post-address">Postnummer</label>
+                        <input class="full-width-input" type="number" id="zip-code" name="zip-code" required min="1000" max="9999">
+                        <label for="city">City</label>
+                        <input class="full-width-input" type="text" id="city" name="city" required>
+                        <label for="country">Land:</label>
+                        <select class="full-width-input" id="country" name="country" required>
+                            <option value="" disabled selected>Velg et land...</option>
+                            <option value="norway">Norge</option>
+                            <option value="torpSAirport">Torp Sandefjord Lufthavn</option>
+                            <option value="bergenAirport">Bergen Lufthavn</option>
+                            <option value="altaAirport">Alta Lufthavn</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="order-section">
+                        <legend class="big-legend">Voksen 18+</legend>
+                        <label for="first-name-two">Fornavn (ifølge pass):</label>
+                        <input class="full-width-input" type="text" id="first-name-two" name="first-name-two" required>
+                        <label for="last-name-two">Etternavn (ifølge pass):</label>
+                        <input class="full-width-input" type="text" id="last-name-two" name="last-name-two" required>
+                        <fieldset class="birthdate">
+                            <legend>Fødselsdato:</legend>
+                            <input type="number" class="day" min="1" max="31" placeholder="DD" required>
+                            <input type="number" class="month" min="1" max="12" placeholder="MM" required>
+                            <input type="number" class="year" min="1900" max="2006" placeholder="ÅÅÅÅ" required>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Kjønn:</legend>
+                            <label for="female-two" class="radio-labels">
+                                <input type="radio" id="female-two" name="gender-two" value="female" required>
+                                Kvinne
+                            </label>
+                            <label for="male-two" class="radio-labels">
+                                <input type="radio" id="male-two" name="gender-two" value="male" required>
+                                Mann
+                            </label>
+                        </fieldset>
+                    </fieldset>
+                    <label class="submit-btn">
+                        Siste trinn <i class="fa-solid fa-arrow-right"></i>
+                        <input type="submit" style="display: none;">
+                    </label>
+                </form>
+            </section>
         </main>
         <footer id="global-footer">
             <section id="footer-countries">
@@ -62,7 +152,7 @@
                 <form class="border-container">
                     <label for="email" class="text-labels">Meld deg på nyhetsbrev her</label>
                     <input class="border-style" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
-                    <input class="button" type="submit" value="Send" id="email-send">
+                    <input class="button yellow" type="submit" value="Send" id="email-send">
                 </form>
                 <a href="#">Kjøp reisegavekort</a>
             </section>
@@ -72,7 +162,7 @@
                     <li><a href="#">Spørsmål og Svar</a></li>
                     <li><a href="#">Chat</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Tilgjgenlighetserklæring</a></li>
+                    <li><a href="#">Tilgjengelighetserklæring</a></li>
                 </ul>
             </section>
             <section id="footer-socialmedia">
@@ -90,13 +180,14 @@
     <script>
         /* burger menu */
         let toggleMenu = () => {
-            let x = document.getElementById("burger-menu");
-                if (x.style.display === "flex") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "flex";
-            }
+            let menu = document.getElementById("burger-menu");
+            menu.classList.toggle("show");
         }
+
+        /* refresh form */
+        window.onload = function() {
+            document.getElementById("final-order").reset();
+        };
     </script>
 </body>
 </html>

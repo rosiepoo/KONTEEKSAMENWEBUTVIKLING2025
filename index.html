@@ -21,9 +21,9 @@
                 <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
                 <ul class="flex-menu" id="header-menu">
                     <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li class="hidden"><a href="#">Oprett konto</a></li>
+                    <li class="hidden"><a href="#">Opprett konto</a></li>
                     <li><a href="#"><i class="fa-regular fa-circle-user"></i><span class="hidden">Min konto</span></a></li>
-                    <li><button class="button-burger"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
+                    <li><button class="button-burger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button></li>
                 </ul>
                 <ul class="flex-menu" id="burger-menu">
                     <li><a href="#tips-og-inspo">Tips og inspirasjon</a></li>
@@ -40,22 +40,22 @@
                 </section>
                 <section id="order-form">
                     <h2 class="hidden">Bestillingskjema</h2>
-                    <nav class="scroll nav">
-                        <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
-                        <ul class="scroll order-menu">
-                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-suitcase"></i> Fly + Hotell</a></li>
-                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-plane"></i> Fly</a></li>
-                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-city"></i> Storby</a></li>
-                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-person-skiing"></i> Ski</a></li>
-                            <li class="scroll-category"><a href="#"><i class="fa-solid fa-map-location-dot"></i> Kombinasjonsreiser</a></li>
+                    <nav class="scroll-container">
+                        <button class="prev hidden"><i class="fa-solid fa-chevron-left"></i></button>
+                        <ul class="scroll-element">
+                            <li class="scroll-item"><a href="#"><i class="fa-solid fa-suitcase"></i> Fly + Hotell</a></li>
+                            <li class="scroll-item"><a href="#"><i class="fa-solid fa-plane"></i> Fly</a></li>
+                            <li class="scroll-item"><a href="#"><i class="fa-solid fa-city"></i> Storby</a></li>
+                            <li class="scroll-item"><a href="#"><i class="fa-solid fa-person-skiing"></i> Ski</a></li>
+                            <li class="scroll-item"><a href="#"><i class="fa-solid fa-map-location-dot"></i> Kombinasjonsreiser</a></li>
                         </ul>
-                        <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="next hidden"><i class="fa-solid fa-chevron-right"></i></button>
                     </nav>
                     <form id="form-layout" action="#" method="POST">
                         <label class="border-container" for="fromDestination" id="fromDestinationLabel"> 
                             <span class="text-labels">Fra</span>
                             <select class="border-style" id="fromDestination" name="fromDestination" required>
-                                <option value="">Velg lufthavn...</option>
+                                <option value="" disabled selected>Velg lufthavn...</option>
                                 <option value="osloAirport">Oslo Lufthavn</option>
                                 <option value="torpSAirport">Torp Sandefjord Lufthavn</option>
                                 <option value="bergenAirport">Bergen Lufthavn</option>
@@ -66,7 +66,7 @@
                         <label class="border-container" for="toDestination" id="toDestinationLabel">
                             <span class="text-labels">Til</span>
                             <select class="border-style" id="toDestination" name="toDestination" required>
-                                <option value="">Velg land...</option>
+                                <option value="" disabled selected>Velg land...</option>
                                 <option value="albania">Albania</option>
                                 <option value="denmark">Danmark</option>
                                 <option value="finland">Finland</option>
@@ -77,7 +77,7 @@
                         <label class="border-container" for="travelDuration" id="travelDurationLabel">
                             <span class="text-labels">Reiselengde</span>
                             <select class="border-style" id="travelDuration" name="travelDuration" required>
-                                <option value="">Velg reiselengde...</option>
+                                <option value="" disabled selected>Velg reiselengde...</option>
                                 <option value="lessThanOne">Mindre enn 1 uke</option>
                                 <option value="oneWeek">1 Uke</option>
                                 <option value="twoWeeks">2 Uker</option>
@@ -95,7 +95,7 @@
                             <input class="border-style" id="amountTravellers" type="number" min="1" max="100" required>
                         </label>
         
-                        <input type="submit" value="Søk" id="searchTravel" class="button">
+                        <input type="submit" value="Søk" id="searchTravel" class="button yellow">
                     </form>
                 </section>
             </header>
@@ -106,23 +106,23 @@
                     <h4>Bestill sommerens beste uke</h4>
                     <p>Fly + hotell, 7 dager</p>
                     <p>Fra 3 298,-</p>
-                    <a href="hotel.html" class="button">Bestill i dag</a>
+                    <a href="hotel.html" class="button yellow">Bestill i dag</a>
                 </article>
             </section>
 
-            <section class="scroll offers" id="sale-section">
+            <section class="scroll-container" id="sale-section">
                 <h2 class="hidden">Tilbudseksjon</h2>
                 <article class="article-cards">
-                    <h3>Få ekslusive tilbud</h3>
-                    <a href="#">Logg inn/opprett konto og få rabattkoder <i class="fa-solid fa-angles-right"></i></a>
+                    <h3>Få eksklusive tilbud</h3>
+                    <a class="blue-links"  href="#">Logg inn/opprett konto og få rabattkoder <i class="fa-solid fa-angles-right"></i></a>
                 </article>
                 <article class="article-cards">
                     <h3>Billige resteplasser</h3>
-                    <a href="#">Opptil 50% rabatt <i class="fa-solid fa-angles-right"></i></a>
+                    <a class="blue-links"  href="#">Opptil 50% rabatt <i class="fa-solid fa-angles-right"></i></a>
                 </article>
                 <article class="article-cards">
                     <h3>Mars - spar opptil 5000,-</h3>
-                    <a href="#">Sikre deg et feriekupp <i class="fa-solid fa-angles-right"></i></a>
+                    <a class="blue-links" href="#">Sikre deg et feriekupp <i class="fa-solid fa-angles-right"></i></a>
                 </article>
             </section>
             <section id="tips-og-inspo">
@@ -141,7 +141,7 @@
                         <img src="img/beach-1836467_640.jpg" alt="#remember">
                     </picture>
                     <h3>Solskinnspriser - bestill i dag!</h3>
-                    <p>Spar opptil 45%. Akkurat nå tilbyr vi bullige vinterreiser til mange reisemål. Bestill vinterens herligste uke i dag!</p>
+                    <p>Spar opptil 45%. Akkurat nå tilbyr vi billige vinterreiser til mange reisemål. Bestill vinterens herligste uke i dag!</p>
                     <a href="#">Fra kr 3 203 <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
                 <article class="article-cards">
@@ -205,7 +205,7 @@
                 <form class="border-container">
                     <label for="email" class="text-labels">Meld deg på nyhetsbrev her</label>
                     <input class="border-style" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
-                    <input class="button" type="submit" value="Send" id="email-send">
+                    <input class="button yellow" type="submit" value="Send" id="email-send">
                 </form>
                 <a href="#">Kjøp reisegavekort</a>
             </section>
@@ -215,7 +215,7 @@
                     <li><a href="#">Spørsmål og Svar</a></li>
                     <li><a href="#">Chat</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Tilgjgenlighetserklæring</a></li>
+                    <li><a href="#">Tilgjengelighetserklæring</a></li>
                 </ul>
             </section>
             <section id="footer-socialmedia">
@@ -233,13 +233,34 @@
     <script>
         /* burger menu */
         let toggleMenu = () => {
-            let x = document.getElementById("burger-menu");
-                if (x.style.display === "flex") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "flex";
-            }
+            let menu = document.getElementById("burger-menu");
+            menu.classList.toggle("show");
         }
+
+        /* refresh form */
+        window.onload = function() {
+            document.getElementById("form-layout").reset();
+        };
+
+        /* form-menu scroll */
+        let scrollContainer = document.querySelector('.scroll-container');
+        let prevButton = document.querySelector('.prev');
+        let nextButton = document.querySelector('.next');
+
+        prevButton.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: -300, // Adjust as needed
+                behavior: 'smooth'
+            });
+        });
+
+        nextButton.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: 300, // Adjust as needed
+                behavior: 'smooth'
+            });
+        });
+
     </script>
 </body>
 </html>

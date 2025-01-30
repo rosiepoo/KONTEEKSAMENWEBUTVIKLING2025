@@ -21,7 +21,7 @@
                 <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
                 <ul class="flex-menu" id="header-menu">
                     <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li class="hidden"><a href="#">Oprett konto</a></li>
+                    <li class="hidden"><a href="#">Opprett konto</a></li>
                     <li><a href="#"><i class="fa-regular fa-circle-user"></i><span class="hidden">Min konto</span></a></li>
                     <li><button class="button-burger"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
                 </ul>
@@ -36,6 +36,7 @@
         <main>
             <header id="hotel-header">
                 <section id="photo-gallery">
+                    <h2 class="hidden">Bildegalleri</h2>
                     <picture class="slides">
                         <img src="img/landscape-2016308_640.jpg" alt="#remember">
                     </picture>
@@ -55,7 +56,7 @@
                         <img src="img/sea-4768869_1920.jpg" alt="#remember">
                     </picture>
                     <button class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="next" onclick="plusSlides(+1)"><i class="fa-solid fa-chevron-right"></i></Button>
+                    <button class="next" onclick="plusSlides(+1)"><i class="fa-solid fa-chevron-right"></i></button>
                     <button id="heart"><i class="fa-regular fa-heart"></i></button>
                     <button id="image-count"><i class="fa-regular fa-images"></i><span>49</span></button>
                 </section>
@@ -71,13 +72,13 @@
                 <h2>Parga beach</h2>
                 <p id="sun-icons"><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-regular fa-sun"></i></p>
                 <p class="rating"><span>8.9</span> Fantastisk</p>
-                <a href="#">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
+                <a class="blue-links" href="#">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
             </section>
             <section id="facilities">
                 <h2>Fasiliteter</h2>
                 <p id="description">Parga Beach tilbyr et tilsynelatende uuttømmelig utvalg av sport og aktiviteter 
-                    og lokker til seg så vel eliteutøvere som aktive familer og hverdsagsmosjoniser 
-                    - i alle eldre og på alle nivåer.</p>
+                    og lokker til seg så vel eliteutøvere som aktive familier og hverdagsmosjonister 
+                    - i alle aldre og på alle nivåer.</p>
                 <p id="facilityone"><i class="fa-solid fa-paw"></i> Kjæledyr-vennelig<br>
                     <i class="fa-solid fa-mug-hot"></i> Frokost<br>
                     <i class="fa-solid fa-spa"></i> Spa
@@ -86,7 +87,7 @@
                     <i class="fa-solid fa-martini-glass"></i> Bar<br>
                     <i class="fa-solid fa-dumbbell"></i> Treningssenter
                 </p>
-                <a href="#">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
+                <a class="blue-links" href="#">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
             </section>
             <section id="choose-room">
                 <h2>Velg rom</h2>
@@ -163,7 +164,7 @@
                 <form class="border-container">
                     <label for="email" class="text-labels">Meld deg på nyhetsbrev her</label>
                     <input class="border-style" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
-                    <input class="button" type="submit" value="Send" id="email-send">
+                    <input class="button yellow" type="submit" value="Send" id="email-send">
                 </form>
                 <a href="#">Kjøp reisegavekort</a>
             </section>
@@ -173,7 +174,7 @@
                     <li><a href="#">Spørsmål og Svar</a></li>
                     <li><a href="#">Chat</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Tilgjgenlighetserklæring</a></li>
+                    <li><a href="#">Tilgjengelighetserklæring</a></li>
                 </ul>
             </section>
             <section id="footer-socialmedia">
@@ -191,12 +192,8 @@
     <script>
         /* burger menu */
         let toggleMenu = () => {
-            let x = document.getElementById("burger-menu");
-                if (x.style.display === "flex") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "flex";
-            }
+            let menu = document.getElementById("burger-menu");
+            menu.classList.toggle("show");
         }
 
         /* photo gallery */
@@ -236,19 +233,27 @@
 
         /* choose room*/
         /* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
-        let mybutton = document.getElementById("choose-room-button");
-        let footer = document.getElementById("global-footer");
-        window.onscroll = function() {scrollFunction()};
+        document.addEventListener("DOMContentLoaded", function () {
+            let mybutton = document.getElementById("choose-room-button");
+            let footer = document.getElementById("global-footer");
+            let targetSection = document.getElementById("choose-room");
+            
+            window.addEventListener("scroll", scrollFunction);
 
-        function scrollFunction() {
-            let footerRect = footer.getBoundingClientRect();
-            let isFooterVisible = footerRect.top <= window.innerHeight;
-            if ((document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) && !isFooterVisible) {
-                mybutton.style.display = "grid";
-            } else {
-                mybutton.style.display = "none";
+            function scrollFunction() {
+                let footerRect = footer.getBoundingClientRect();
+                let isFooterVisible = footerRect.top <= window.innerHeight;
+
+                let sectionRect = targetSection.getBoundingClientRect();
+                let isSectionVisible = sectionRect.top <= window.innerHeight && sectionRect.bottom >= 0;
+
+                if (isSectionVisible && !isFooterVisible) {
+                    mybutton.classList.add("show");
+                } else {
+                    mybutton.classList.remove("show");
+                }
             }
-        }
+        });
     </script>
 </body>
 </html>
