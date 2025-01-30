@@ -54,8 +54,8 @@
                     <picture class="slides">
                         <img src="img/sea-4768869_1920.jpg" alt="#remember">
                     </picture>
-                    <button class="prev" onclick="plusDivs(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="next" onclick="plusDivs(+1)"><i class="fa-solid fa-chevron-right"></i></Button>
+                    <button class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="next" onclick="plusSlides(+1)"><i class="fa-solid fa-chevron-right"></i></Button>
                     <button id="heart"><i class="fa-regular fa-heart"></i></button>
                     <button id="image-count"><i class="fa-regular fa-images"></i><span>49</span></button>
                 </section>
@@ -97,7 +97,7 @@
                     <h3>Junior Suite</h3>
                     <p>Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
                     <p class="rating"><span>8.9</span> 59 anmeldelser</p>
-                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Ink. moms og avgifter</p>
+                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Inkl. moms og avgifter</p>
                 </article>
                 <article class="article-cards">
                     <picture>
@@ -106,7 +106,7 @@
                     <h3>Junior Suite</h3>
                     <p>Plass til 2 <span class="dot">&#x2022;</span> Queen size-seng</p>
                     <p class="rating"><span>8.9</span> 59 anmeldelser</p>
-                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Ink. moms og avgifter</p>
+                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Inkl. moms og avgifter</p>
                 </article>
                 <article class="article-cards">
                     <picture>
@@ -115,7 +115,7 @@
                     <h3>Junior Suite</h3>
                     <p>Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
                     <p class="rating"><span>8.9</span> 59 anmeldelser</p>
-                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Ink. moms og avgifter</p>
+                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Inkl. moms og avgifter</p>
                 </article>
                 <article class="article-cards">
                     <picture>
@@ -124,12 +124,17 @@
                     <h3>Junior Suite</h3>
                     <p>Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
                     <p class="rating"><span>8.9</span> 59 anmeldelser</p>
-                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Ink. moms og avgifter</p>
+                    <p><span class="price-tag">6 789 kr</span><br>for 3 netter, 1 rom<br>2 263 kr per natt<br>Inkl. moms og avgifter</p>
                 </article>
             </section>
             <aside id="map">
                 <h2>Utforsk området</h2>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5806.814338490057!2d20.38392041975443!3d39.28621533916043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135c632e49c7cda5%3A0x9406a292c1e28ae2!2sParga%20Beach%20Resort!5e0!3m2!1sen!2sno!4v1737832892167!5m2!1sen!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </aside>
+            <aside id="choose-room-button">
+                <h2 class="hidden">Chosen room</h2>
+                <p><span>8 733 kr</span><br>2 394 kr per natt</p>
+                <button>Velg rom</button>
             </aside>
         </main>
         <footer id="global-footer">
@@ -184,6 +189,7 @@
         </footer>
     </div>
     <script>
+        /* burger menu */
         let toggleMenu = () => {
             let x = document.getElementById("burger-menu");
                 if (x.style.display === "flex") {
@@ -193,24 +199,31 @@
             }
         }
 
-        var slideIndex = 1;
-        showDivs(slideIndex);
+        /* photo gallery */
+        /* https://www.w3schools.com/howto/howto_js_slideshow.asp */
+        let slideIndex = 1;
+        showSlides(slideIndex);
 
-        function plusDivs(n) {
-        showDivs(slideIndex += n);
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
         }
 
-        function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("slides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length} ;
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        x[slideIndex-1].style.display = "block";
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
         }
 
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+
+        /* hotel tabs */
         const navItems = document.querySelectorAll('#hoteltabs li');
         
         navItems.forEach(item => {
@@ -220,6 +233,22 @@
             item.classList.add('active');
             });
         });
+
+        /* choose room*/
+        /* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+        let mybutton = document.getElementById("choose-room-button");
+        let footer = document.getElementById("global-footer");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            let footerRect = footer.getBoundingClientRect();
+            let isFooterVisible = footerRect.top <= window.innerHeight;
+            if ((document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) && !isFooterVisible) {
+                mybutton.style.display = "grid";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
