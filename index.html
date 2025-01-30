@@ -20,9 +20,9 @@
             <nav>
                 <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
                 <ul class="flex-menu" id="header-menu">
-                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li class="hidden"><a href="#">Opprett konto</a></li>
-                    <li><a href="#"><i class="fa-regular fa-circle-user"></i><span class="hidden">Min konto</span></a></li>
+                    <li id="magnifying-glass"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li class="header-buttons desktop hidden"><a href="#">Opprett en konto</a></li>
+                    <li class="header-buttons"><a href="#"><i class="fa-regular fa-circle-user"></i><span class="desktop hidden">Min side</span></a></li>
                     <li><button class="button-burger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button></li>
                 </ul>
                 <ul class="flex-menu" id="burger-menu">
@@ -41,15 +41,15 @@
                 <section id="order-form">
                     <h2 class="hidden">Bestillingskjema</h2>
                     <nav class="scroll-container">
-                        <button class="prev hidden"><i class="fa-solid fa-chevron-left"></i></button>
-                        <ul class="scroll-element">
-                            <li class="scroll-item"><a href="#"><i class="fa-solid fa-suitcase"></i> Fly + Hotell</a></li>
+                        <button class="mobile prev hidden"><i class="fa-solid fa-chevron-left"></i></button>
+                        <ul class="scroll-element" id="formtabs">
+                            <li class="active scroll-item"><a href="#"><i class="fa-solid fa-suitcase"></i> Fly + Hotell</a></li>
                             <li class="scroll-item"><a href="#"><i class="fa-solid fa-plane"></i> Fly</a></li>
                             <li class="scroll-item"><a href="#"><i class="fa-solid fa-city"></i> Storby</a></li>
                             <li class="scroll-item"><a href="#"><i class="fa-solid fa-person-skiing"></i> Ski</a></li>
                             <li class="scroll-item"><a href="#"><i class="fa-solid fa-map-location-dot"></i> Kombinasjonsreiser</a></li>
                         </ul>
-                        <button class="next hidden"><i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="mobile next hidden"><i class="fa-solid fa-chevron-right"></i></button>
                     </nav>
                     <form id="form-layout" action="#" method="POST">
                         <label class="border-container" for="fromDestination" id="fromDestinationLabel"> 
@@ -127,55 +127,55 @@
             </section>
             <section id="tips-og-inspo">
                 <h2>Tips &amp; inspirasjon</h2>
-                <article class="article-cards">
-                    <picture>
+                <article class="article-cards" id="greek-fav">
+                    <picture class="article-img">
                         <img src="img/beach-6514331_640.jpg" alt="#remember">
                     </picture>
-                    <h3>Greske favoritter</h3>
-                    <p id="deal-of-the-week-tag">Ukens deals</p>
-                    <p>Akkurat nå får du 1 000,- i rabatt per bestilling til bl.a. Parga, Sivota, Lefkas, Korfu og Kalamata i Hellas. Gjelder avreiser i sommer 2025. Kampanje er gyldig i perioden 3/1 - 12/1-2025. Bruk rabattkoden WEEKDEAL ved bestilling.</p>
-                    <a href="#">Fra kr 3 970 <i class="fa-solid fa-arrow-right"></i></a>
+                    <h3 class="article-title">Greske favoritter</h3>
+                    <p class="article-description">Akkurat nå får du 1 000,- i rabatt per bestilling til bl.a. Parga, Sivota, Lefkas, Korfu og Kalamata i Hellas. Gjelder avreiser i sommer 2025. Kampanje er gyldig i perioden 3/1 - 12/1-2025. Bruk rabattkoden WEEKDEAL ved bestilling.</p>
+                    <p id="deal-of-the-week-tag">Ukens Deal</p>
+                    <a class="blue-bottom" href="#">Fra kr 3 970 <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
-                <article class="article-cards">
-                    <picture>
+                <article class="article-cards" id="sunny-prices">
+                    <picture class="article-img">
                         <img src="img/beach-1836467_640.jpg" alt="#remember">
                     </picture>
-                    <h3>Solskinnspriser - bestill i dag!</h3>
-                    <p>Spar opptil 45%. Akkurat nå tilbyr vi billige vinterreiser til mange reisemål. Bestill vinterens herligste uke i dag!</p>
-                    <a href="#">Fra kr 3 203 <i class="fa-solid fa-arrow-right"></i></a>
+                    <h3 class="article-title">Solskinnspriser - bestill i dag!</h3>
+                    <p class="article-description">Spar opptil 45%. Akkurat nå tilbyr vi billige vinterreiser til mange reisemål. Bestill vinterens herligste uke i dag!</p>
+                    <a class="blue-bottom" href="#">Fra kr 3 203 <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
-                <article class="article-cards">
-                    <picture>
+                <article class="article-cards" id="city-holiday">
+                    <picture class="article-img">
                         <img src="img/cathedral-427997_640.jpg" alt="#remember">
                     </picture>
-                    <h3>Storbyferie</h3>
-                    <p>Bestill en langhelg og unn deg en flott weekendreise i en storby der du selv velger reiselengde, fly og nøye utvalgte hotell.</p>
-                    <a href="#">Les mer <i class="fa-solid fa-arrow-right"></i></a>
+                    <h3 class="article-title">Storbyferie</h3>
+                    <p class="article-description">Bestill en langhelg og unn deg en flott weekendreise i en storby der du selv velger reiselengde, fly og nøye utvalgte hotell.</p>
+                    <a class="blue-bottom" href="#">Les mer <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
-                <article class="article-cards">
-                    <picture>
+                <article class="article-cards" id="easter-london">
+                    <picture class="article-img">
                         <img src="img/building-7014904_640.jpg" alt="#remember">
                     </picture>
-                    <h3>Besøk påskefavoritten London</h3>
-                    <p>London er en av de mest populære reisemålene i påsken, kjent for sin unike blanding av historie, kultur og moderne opplevelser.</p>
-                    <a href="#">Fra kr 2 150 <i class="fa-solid fa-arrow-right"></i></a>
+                    <h3 class="article-title">Besøk påskefavoritten London</h3>
+                    <p class="article-description">London er en av de mest populære reisemålene i påsken, kjent for sin unike blanding av historie, kultur og moderne opplevelser.</p>
+                    <a class="blue-bottom" href="#">Fra kr 2 150 <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
-                <article class="article-cards">
-                    <picture>
+                <article class="article-cards" id="skiing-trip">
+                    <picture class="article-img">
                         <img src="img/ski-slope-3223709_640.jpg" alt="#remember">
                     </picture>
-                    <h3>Skiferie</h3>
+                    <h3 class="article-title">Skiferie</h3>
+                    <p class="article-description">Drømmer du om en puddersnø, frisk fjelluft og fartsfylte nedfarter? Vinteren er endelig her, og det betyr at skisesongen er i full gang!</p>
                     <p id="new-tag">Nyhet</p>
-                    <p>Drømmer du om en puddersnø, frisk fjelluft og fartsfylte nedfarter? Vinteren er endelig her, og det betyr at skisesongen er i full gang!</p>
-                    <a href="#">Se alle skistedene <i class="fa-solid fa-arrow-right"></i></a>
+                    <a class="blue-bottom" href="#">Se alle skistedene <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
-                <article class="article-cards">
-                    <picture>
+                <article class="article-cards" id="save-for-summer">
+                    <picture class="article-img">
                         <img src="img/beach-666122_640.jpg" alt="#remember">
                     </picture>
-                    <h3>Spar opptil 7000,- til sommer</h3>
-                    <p>Drømmer du om solfylte dager og eksotiske opplevelser? Nå har du sjansen til å sikre deg din drømmeferie til en fantastisk pris!</p>
-                    <a href="#">Les mer <i class="fa-solid fa-arrow-right"></i></a>
+                    <h3 class="article-title">Spar opptil 7000,- til sommer</h3>
+                    <p class="article-description">Drømmer du om solfylte dager og eksotiske opplevelser? Nå har du sjansen til å sikre deg din drømmeferie til en fantastisk pris!</p>
+                    <a class="blue-bottom" href="#">Les mer <i class="fa-solid fa-arrow-right"></i></a>
                 </article>
             </section>
         </main>
@@ -236,6 +236,17 @@
             let menu = document.getElementById("burger-menu");
             menu.classList.toggle("show");
         }
+
+        /*form tabs*/
+        const navItems = document.querySelectorAll('#formtabs li');
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navItems.forEach(i => i.classList.remove('active'));
+        
+            item.classList.add('active');
+            });
+        });
 
         /* refresh form */
         window.onload = function() {

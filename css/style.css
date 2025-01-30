@@ -7,6 +7,7 @@
 html, 
 body {
     max-width: 1400px;
+    margin: 0 auto;
 }
 html {
     font-size: 100%;
@@ -62,7 +63,7 @@ button,
 button:hover{
     background-color: rgba(0, 0, 0, 0.1);
 }
-ul {
+ul, ol {
     list-style: none;
 }
 label {
@@ -134,10 +135,11 @@ p, a, input, label, legend, select {
 .border-container .text-labels {
     position: absolute;
     background-color: white;
-    left: 10px;
-    top: -12px;
-    padding: 0 1rem;
+    left: 15px;
+    top: -10px;
+    padding: 0;
     z-index: 1;
+    font-size: 0.85rem;
 }
 .border-container .border-style {
     font-family: inherit;
@@ -159,20 +161,26 @@ p, a, input, label, legend, select {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
     align-self: center;
-    border-radius: 35px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 13px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     width: 100%;
     box-sizing: border-box;
     text-align: start;
+    border: 1px solid #f6f5f2;
+    position: relative;
 }
 .article-cards img {  
     width: 100%;   
     object-fit: cover;   
 }
-.article-cards h3, .article-cards p, .article-cards a {
+.article-cards h3 {
+    padding: 0.8rem;
+    margin: 0;
+}
+.article-cards p {
     padding: 1rem;
-    box-sizing: border-box;
+    margin-bottom: 2rem;
 }
 .scroll-container {
     display: flex;
@@ -210,22 +218,42 @@ p, a, input, label, legend, select {
 }
 #order-nav.scroll-container {
     padding: 0 1rem;
-    white-space: wrap;
-}
-#order-nav .scroll-element {
-    flex-direction: row;
-    flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+}
+#order-nav .scroll-element {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: 0;
+    width: fit-content;
+    min-width: 100%;
+    scroll-padding-right: 0;
 }
 #order-nav .scroll-item {
-    padding: 10px 0;
+    padding: 0;
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 #order-nav .scroll-item i{
     margin-left: 1rem;
     margin-right: 1rem;
+    font-size: 2rem;
+    align-content: center;
+}
+#order-nav .scroll-item a {
+    display: flex;
+    margin-right: 0;
+    align-items: center;
+    font-size: 1.5rem;
 }
 #order-form nav.scroll-container::-webkit-scrollbar,
 #order-nav .scroll-element::-webkit-scrollbar {
@@ -310,11 +338,31 @@ p, a, input, label, legend, select {
     align-items: center;
     color: #1ca2c1;
 }
+.blue-bottom {
+    border-bottom: 3px solid #1ca2c1;
+    width: fit-content;
+    margin: 0 0.5rem;
+    padding: 0 0.5rem;
+}
+.blue-bottom i {
+    margin-left: 5px;
+}
 .blue-links i {
     margin-left: 5px;
 }
 .hidden{
     display: none;
+}
+#new-tag, #deal-of-the-week-tag {
+    position: absolute;
+    background-color: #1ca2c1;
+    width: fit-content;
+    color: white;
+    overflow: hidden;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border-radius: 0 0 25px 0;
+    padding: 0.7rem 1rem 0.9rem 0.9rem;
 }
 
 
@@ -428,6 +476,7 @@ p, a, input, label, legend, select {
 }
 #footer-news .text-labels {
     text-wrap: wrap;
+    padding: 1px 2px;
     background-color: #252525;
     z-index: 0;
 }
@@ -480,12 +529,25 @@ p, a, input, label, legend, select {
     justify-self: center;
     background-color: white;
     border-radius: 25px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     padding: 1rem;
     width: 90%;
 
     grid-column: 1 / 3;
     grid-row: 2 / 5;
+}
+#formtabs {
+    padding: 0;
+}
+#formtabs a {
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+#formtabs li {
+    padding-bottom: 0.1rem;
+}
+#formtabs li.active {
+    border-bottom: 4px #52d3f0 solid;
 }
 #form-layout {
     display: grid;
@@ -493,7 +555,10 @@ p, a, input, label, legend, select {
     grid-template-rows: repeat(5, auto);
     padding: 1rem;
     column-gap: 1rem;
-
+}
+#form-layout .border-style{
+    border-radius: 10px;
+    padding: 0.8rem;
 }
 #orderCategories {
     padding-top: 1rem;
@@ -524,6 +589,7 @@ p, a, input, label, legend, select {
 }
 #searchTravel {
     grid-row: 5 / 6;
+    font-weight: 800;
 }
 #orderCategoriesLabel, 
 #fromDestinationLabel, 
@@ -538,7 +604,7 @@ p, a, input, label, legend, select {
     background-image: url(../img/holiday-2733322_1280.jpg);
     background-size: cover;
     min-height: 500px;
-    border-radius: 35px;
+    border-radius: 20px;
 }
 #deal-section article {
     display: flex;
@@ -564,8 +630,20 @@ p, a, input, label, legend, select {
     grid-row: 3 / 4;
 }
 #sale-section .article-cards {
-    padding: 1rem;
+    padding: 2rem;
     flex: 0 0 100%;
+}
+#sale-section .blue-links {
+    font-weight: 500;
+}
+#sale-section .article-cards h3 {
+    font-size: 1.2rem;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+}
+#sale-section .article-cards a {
+    margin: 0;
+    padding: 0;
 }
 #tips-og-inspo {
     padding: 1rem;
@@ -588,7 +666,7 @@ p, a, input, label, legend, select {
 }
 #hotel-header nav {
     padding: 1rem 1rem 0 1rem;
-    border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);;
+    border-bottom: 1.5px solid #f6f5f2;;
 }
 #hoteltabs {
     padding: 0;
@@ -601,7 +679,6 @@ p, a, input, label, legend, select {
     padding-bottom: 0.5rem;
 }
 #hoteltabs li.active {
-    
     border-bottom: 3px #52d3f0 solid;
 }
 #hoteltabs li.active a{
@@ -774,7 +851,7 @@ p, a, input, label, legend, select {
     padding: 25px;
     border-radius: 50px 50px 0 0;
     font-size: 18px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     max-height: 100px;
     align-content: center;
     opacity: 0;
@@ -818,22 +895,26 @@ p, a, input, label, legend, select {
     width: 100%;
     max-width: 100%;
 }
+
 #your-choices {
     margin: 0 1rem;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#your-choices .article-cards {
+    display: flex;
+    max-width: 100%;
     width: 100%;
+    align-items: center;
+    padding: 1.5rem;
+    margin-top: 15px;
+    border-radius: 25px;
+    border: 1px solid #f6f5f2;
 }
-#your-choices.article-cards {
-    padding: 1rem;
-    flex: 0 0 100%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    align-self: center;
-    justify-self: center;
-}
-#your-choices h2 {
-    align-self: center;
-    margin: 0;
-    padding: 0.5rem;
+#your-choices .article-cards i {
+    font-size: 1.5rem;
+    margin-left: 15px;
 }
 #order-nav {
     background-color: #1ca2c1;
@@ -847,7 +928,7 @@ p, a, input, label, legend, select {
     justify-content: center;
 }
 .order-section {
-    background-color: antiquewhite;
+    background-color: #f6f5f2;
     border-radius: 20px;
     border: none;
     max-width: 100%;
@@ -922,4 +1003,338 @@ p, a, input, label, legend, select {
 }
 label.radio-labels {
     font-weight: normal;
+}
+
+/* desktop version */
+@media (min-width: 1024px) {
+    /* desktop classes and defaults*/
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body, .container {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .desktop {
+        display: unset;
+    }
+    .button-burger, .mobile {
+        display: none;
+    }
+    #burger-menu {
+        display: flex;
+    }
+    .flex-menu {
+        gap: 0;
+    }
+    .header-buttons {
+        display: flex;
+        color: #1ca2c1;
+        border: 1.5px solid #1ca2c1;
+        border-radius: 45px;
+        padding: 0.2rem 0.5rem;
+        height: 45px;
+        align-items: center;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        justify-content: center;
+    }
+    #magnifying-glass {
+        margin-right: 1rem;
+    }
+    .header-buttons a span{
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        font-weight: 700;
+        margin-left: 5px;
+    }
+    .header-buttons a {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+    /* desktop header and footer */
+    #global-footer i, #global-header i {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    #global-header {
+        padding: 0.5rem;
+    }
+    #global-header nav{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto;
+        gap: 0;
+    }
+    #website-logo {
+        grid-row: 1 / 3;
+        grid-column: 1 / 2;
+    }
+    #website-logo img {
+        width: 100px;
+        padding: 0.5rem;
+    }
+    #header-menu {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        align-self: center;
+        justify-self: flex-end;
+    }
+    #burger-menu {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        align-self: center;
+        justify-self: flex-end;
+        margin-right: 0.5rem;
+        gap: 1.5rem;
+        font-weight: 600;
+    }
+    #burger-menu li a{
+        text-wrap: nowrap;
+    }
+    #global-footer {
+        grid-row: 3 / 4;
+        display: grid;
+        max-width: 100%;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 2rem 2rem;
+        background-color: #252525;
+        color: white;
+        padding: 2rem 1rem 2rem 1rem;
+    }
+    #global-footer section {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    #footer-countries {
+        grid-row: 1 / 2;
+        grid-column: 2 / 4;
+        max-width: 100%;
+    }
+    #flag-menu {
+        align-self: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    #flag-menu li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+    #flag-menu img {
+        max-width: 50px;
+        margin-right: 10px;
+    }
+    #footer-payment {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+    #footer-news {
+        text-wrap: nowrap;
+        width: 100%;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+    }
+
+    #footer-customerservice {
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+    }
+    #footer-socialmedia {
+        grid-row: 2 / 3;
+        grid-column: 4 / 5;
+    }
+    #global-footer h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+    #footer-news .border-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px;
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 10px;
+    }
+    #global-footer section {
+        padding: 10px 1rem;
+    }
+    
+    /* desktop front page */
+    #order-form, #form-layout, 
+    #deal-section, #sale-section, #tips-og-inspo {
+        max-width: 1000px;
+        justify-self: center;
+        align-self: center;
+    }
+    #frontpage-header {
+        padding: 0;
+        gap: 0;
+    }
+    #order-form {
+        padding: 0;
+        gap: 0;
+    }
+    .scroll-container {
+        position: unset;
+        padding: 1rem 1.3rem;
+    }
+    #form-layout {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+    }
+    #fromDestinationLabel {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #toDestinationLabel {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    #travelDurationLabel {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+    #travelDateLabel {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+    }
+    #amountTravellersLabel {
+        grid-column: 5 / 6;
+        grid-row: 1 / 2;
+    }
+    #searchTravel {
+        grid-column: 6 / 7;
+        grid-row: 1 / 2;
+        height: 45px;
+    }
+    #form-layout .text-labels {
+        font-size: 0.8rem;
+        text-wrap: nowrap;
+        top: -10px;
+        left: 10px;
+        padding: 1.5px;
+    }
+    #sale-section.scroll-container {
+        max-height: 300px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1.5rem;
+        overflow: hidden;
+    }
+    #sale-section {
+        width: 100%;
+        max-width: 1000px;
+        padding: 5px;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    #sale-section .article-cards {
+        flex: unset;
+        padding: 1rem 1.5rem 1rem 1.4rem;
+        gap: 0.5rem;
+        width: auto;
+        border-radius: 10px;
+        max-height: 150px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    #sale-section .article-cards h3 {
+        font-size: 1.2rem;
+        margin: 5px 10px 0 0;
+        padding: 10px 10px 10px 0;;
+    }
+    #sale-section .article-cards a {
+        margin: 0;
+        padding: 0 10px 0 0px;;
+    }
+    #tips-og-inspo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+
+        align-items: center;
+        align-content: center;
+        justify-self: center;
+        justify-content: space-between;
+
+        h2 {
+            width: 100%;
+        }
+    }
+   
+    #tips-og-inspo .article-cards {
+        height: 100%;
+        min-height: 500px;
+        width: calc((100% / 3) - 20px);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto 1fr auto;
+    }
+    .article-img {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        
+        img {
+            height: 100%;
+        }
+    }
+    .article-title {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+    .article-description {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .article-description p {
+        align-self: start;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        font: 1rem;
+    }
+    .blue-bottom {
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+        padding: 0 0.5rem;
+        margin: 0;
+    }
+    
+    #tips-og-inspo .article-cards h3 {
+        font-size: 1rem;
+        margin: 0;
+    }
+    #tips-og-inspo .article-cards p {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    
+    /* desktop hotel page */
+
+    /* desktop order page */
 }

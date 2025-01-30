@@ -20,9 +20,9 @@
             <nav>
                 <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
                 <ul class="flex-menu" id="header-menu">
-                    <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li class="hidden"><a href="#">Opprett konto</a></li>
-                    <li><a href="#"><i class="fa-regular fa-circle-user"></i><span class="hidden">Min konto</span></a></li>
+                    <li id="magnifying-glass"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li class="header-buttons desktop hidden"><a href="#">Opprett en konto</a></li>
+                    <li class="header-buttons"><a href="#"><i class="fa-regular fa-circle-user"></i><span class="desktop hidden">Min side</span></a></li>
                     <li><button class="button-burger"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
                 </ul>
                 <ul class="flex-menu" id="burger-menu">
@@ -36,19 +36,54 @@
         <main>
             <header>
                 <nav class="scroll-container" id="order-nav">
-                    <ul class="scroll-element">
-                        <li class="scroll-item"><a href="index.html#order-form">Søk </a><i class="fa-solid fa-chevron-right"></i></li>
-                        <li class="scroll-item"><a href="hotel.html">Søkeresultater </a><i class="fa-solid fa-chevron-right"></i></li>
-                        <li class="scroll-item"><a href="hotel.html#choose-room">Rom </a><i class="fa-solid fa-chevron-right"></i></li>
-                        <li class="scroll-item"><a href="https://www.norwegian.no" target="_blank">Fly </a><i class="fa-solid fa-chevron-right"></i></li>
-                        <li class="scroll-item"><a href="#">Tillegg </a><i class="fa-solid fa-chevron-right"></i></li>
-                        <li class="scroll-item"><a href="order.html">OPPLYSNINGER </a><i class="fa-solid fa-chevron-right"></i></li>
-                        <li class="scroll-item"><a href="#last-step">Bestill</a></li>
-                    </ul>
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+                        <li itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                          <a itemprop="item" href="https://example.com/dresses">
+                          <span itemprop="name">Søk</span></a>
+                          <meta itemprop="position" content="1" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                          <a itemprop="item" href="https://example.com/dresses/real">
+                          <span itemprop="name">Søkeresultater</span></a>
+                          <meta itemprop="position" content="2" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                          <a itemprop="item" href="https://example.com/dresses/real">
+                          <span itemprop="name">Romtype</span></a>
+                          <meta itemprop="position" content="3" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                          <a itemprop="item" href="https://example.com/dresses/real">
+                          <span itemprop="name">Fly</span></a>
+                          <meta itemprop="position" content="4" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                          <a itemprop="item" href="https://example.com/dresses/real">
+                          <span itemprop="name">Tillegg</span></a>
+                          <meta itemprop="position" content="5" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                          <a itemprop="item" href="https://example.com/dresses/real">
+                          <span itemprop="name">Opplysninger</span></a>
+                          <meta itemprop="position" content="6" />
+                        </li>
+                        <li itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                          <a itemprop="item" href="https://example.com/dresses/real">
+                          <span itemprop="name">Bestill</span></a>
+                          <meta itemprop="position" content="7" />
+                        </li>
+                    </ol>
                 </nav>
             </header>
-            <aside id="your-choices" class="article-cards">
-                <h2>Dine valg <i class="fa-solid fa-chevron-right"></i></h2>
+            <aside id="your-choices">
+                <h2 class="article-cards">Dine valg <i class="fa-solid fa-chevron-right"></i></h2>
             </aside>
             <section>
                 <h1>Oppgi dine bestillingsopplysninger</h1>
