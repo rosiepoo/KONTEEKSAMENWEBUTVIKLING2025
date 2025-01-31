@@ -112,7 +112,6 @@ p, a, input, label, legend, select {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
-    gap: 1rem;
     width: 100%;
     max-width: 100%;
 }
@@ -303,7 +302,8 @@ p, a, input, label, legend, select {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 0.9rem;
 }
 .rating span {
     display: flex;
@@ -316,7 +316,7 @@ p, a, input, label, legend, select {
     border: none;
     padding: 15px 25px;
     border-radius: 10px;
-    margin-right: 10px;
+    margin-right: 1px;
 }
 .submit-btn {
     padding: 10px 20px;
@@ -337,6 +337,7 @@ p, a, input, label, legend, select {
     display: flex;
     align-items: center;
     color: #1ca2c1;
+    font-weight: bold;
 }
 .blue-bottom {
     border-bottom: 3px solid #1ca2c1;
@@ -364,6 +365,10 @@ p, a, input, label, legend, select {
     border-radius: 0 0 25px 0;
     padding: 0.7rem 1rem 0.9rem 0.9rem;
 }
+.dot {
+    font-size: 15px;
+    font-weight: bolder;
+}
 
 
 /* header and footer */
@@ -373,7 +378,8 @@ p, a, input, label, legend, select {
 #global-header {
     grid-row: 1 / 2;
     max-width: 100%;
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
 }
 #global-header nav{
     display: grid;
@@ -528,10 +534,11 @@ p, a, input, label, legend, select {
     gap: 2rem;
     justify-self: center;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 15px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     padding: 1rem;
     width: 90%;
+    margin-bottom: 5rem;
 
     grid-column: 1 / 3;
     grid-row: 2 / 5;
@@ -605,6 +612,7 @@ p, a, input, label, legend, select {
     background-size: cover;
     min-height: 500px;
     border-radius: 20px;
+    margin-bottom: 5rem;
 }
 #deal-section article {
     display: flex;
@@ -628,6 +636,7 @@ p, a, input, label, legend, select {
 #sale-section {
     padding: 1rem;
     grid-row: 3 / 4;
+    margin-bottom: 2rem;
 }
 #sale-section .article-cards {
     padding: 2rem;
@@ -648,6 +657,7 @@ p, a, input, label, legend, select {
 #tips-og-inspo {
     padding: 1rem;
     grid-row: 4 / 5;
+    margin-bottom: 2rem;
 }
 
 
@@ -666,10 +676,11 @@ p, a, input, label, legend, select {
 }
 #hotel-header nav {
     padding: 1rem 1rem 0 1rem;
-    border-bottom: 1.5px solid #f6f5f2;;
+    border-bottom: 1.5px solid #f6f5f2;
 }
 #hoteltabs {
     padding: 0;
+    gap: 1.5rem;
 }
 #hoteltabs a {
     font-size: 1.5rem;
@@ -751,6 +762,13 @@ p, a, input, label, legend, select {
 #summary {
     max-width: 100%;
     grid-row: 2 / 3;
+    gap: 0.5rem;
+}
+#summary p {
+    margin-bottom: 1rem;
+}
+#summary span {
+    margin-right: 10px;
 }
 #sun-icons {
     color: #ffcf40;
@@ -813,6 +831,7 @@ p, a, input, label, legend, select {
     gap: 10px;
     height: auto;
     max-width: 100%;
+    margin-bottom: 3rem;
 
     h2 {
         width: 100%;
@@ -826,6 +845,9 @@ p, a, input, label, legend, select {
             padding-bottom: 0;
         }
         p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.5rem 1.5rem;
         }
     }
@@ -842,7 +864,6 @@ p, a, input, label, legend, select {
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    max-width: 95%;
     z-index: 99;
     outline: none;
     background-color: white; 
@@ -883,8 +904,33 @@ p, a, input, label, legend, select {
     display: grid;
     opacity: 1;
     width: 100%;
-    max-width: 95%;
 }
+#choose-room .article-cards p,
+#choose-room .article-cards h3{
+    margin: 0;
+    padding: 0 1.2rem;
+}
+#choose-room .article-cards .description {
+    font-size: 0.9rem;
+}
+#choose-room .article-cards .bed-info {
+    align-items: flex-end;
+    align-self: center;
+    max-height: 100px;
+    display: flex;
+    font-size: 0.8rem;
+}
+#choose-room .article-cards picture, img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.price-tag {
+    font-size: 1.5rem;
+    font-weight: 700;
+    align-self: flex-end;
+}
+
 
 /* order page */
 .container.orderpage {
@@ -1064,11 +1110,13 @@ label.radio-labels {
 
     /* desktop header and footer */
     #global-footer i, #global-header i {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-right: 10px;
     }
     #global-header {
-        padding: 0.5rem;
+        padding: 1rem 0.5rem;
+        border-bottom: 1.5px solid #f6f5f2;;
+        margin-bottom: 0;
     }
     #global-header nav{
         width: 100%;
@@ -1171,6 +1219,12 @@ label.radio-labels {
         width: 100%;
         padding: 1rem;
         margin-bottom: 10px;
+        margin-top: 5px;
+    }
+    #footer-news .text-labels {
+        font-size: 1rem;
+        padding: 3px;
+        top: -15px;
     }
     #global-footer section {
         padding: 10px 1rem;
@@ -1178,6 +1232,7 @@ label.radio-labels {
     
     /* desktop front page */
     #order-form, #form-layout, 
+    .container.hotelpage main,
     #deal-section, #sale-section, #tips-og-inspo {
         max-width: 1000px;
         justify-self: center;
@@ -1244,7 +1299,6 @@ label.radio-labels {
         width: 100%;
         max-width: 1000px;
         padding: 5px;
-        margin: 0;
         justify-content: center;
         align-items: center;
     }
@@ -1335,6 +1389,111 @@ label.radio-labels {
 
     
     /* desktop hotel page */
+    .container.hotelpage main {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: repeat(5, auto);
+        width: 100%;
+    }
 
+    #hotel-header {
+        grid-row: 1 / 2;
+        grid-column: 1 /3;
+    }
+    #photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        width: 100%;
+    }
+    #photo-gallery img{
+        width: 100%;
+        height: 100%;
+    }
+    #photo-gallery picture{
+        width: 100%;
+        height: 100%;
+    }
+    #picture-one {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
+    #picture-two {
+        grid-column: 3 / 5;
+        grid-row: 2 / 4;
+    }
+    #picture-three {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    #picture-four {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    #picture-five {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+    #picture-six {
+        grid-column: 4 / 5;
+        grid-row: 1 / 2;
+    }
+    #photo-gallery .prev, #photo-gallery .next {
+        display: none;
+    }
+    #summary {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+    #facilities {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+    #choose-room {
+        grid-row: 5 / 6;
+        grid-column: 1 / 3;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0;
+
+        align-items: center;
+        align-content: center;
+        justify-self: center;
+        justify-content: space-between;
+
+    }
+    #choose-room .article-cards {
+        min-height: 500px;
+        width: calc((100% / 3) - 20px);
+        display: grid;
+        margin: unset;
+        height: auto;
+    }
+    #choose-room h2 {
+        display: none;
+    }
+    #choose-room-button {
+        grid-row: 4 / 5;
+        grid-column: 1 / 3;
+        position: unset;
+        transform: unset;
+        width: 100%;
+        max-width: 1000px;
+        justify-self: center;
+        align-self: center;
+        margin: 0;}
+    #map {
+        grid-row: 2 / 4;
+        grid-column: 2 / 3;
+        width: 350px;
+        height: 350px;
+    }
+    #map iframe {
+        max-width: 100%;
+        max-height: 100%;
+    }
     /* desktop order page */
 }
