@@ -8,6 +8,7 @@ html,
 body {
     max-width: 1400px;
     margin: 0 auto;
+    height: 100%;
 }
 html {
     font-size: 100%;
@@ -106,6 +107,9 @@ p, a, input, label, legend, select {
 
 
 /* classes */
+.hidden-two {
+    visibility: hidden;
+}
 .container {
     margin: 0;
     padding: 0;
@@ -181,32 +185,7 @@ p, a, input, label, legend, select {
     padding: 1rem;
     margin-bottom: 2rem;
 }
-.scroll-container {
-    display: flex;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-right: 15px;
-    padding-left: 15px;
-    position: relative;
-}
-.scroll-element {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 30px;
-}
-.scroll-item {
-    height: 100%;
-    flex-grow: 0;
-    flex-shrink: 0;
-    text-align: center;
-}
-.scroll-item a, .scroll-item i{
-    font-size: 1.2rem;
-}
-#order-form.scroll-element {
-    -webkit-overflow-scrolling: touch;
-}
+
 #sale-section.scroll-container {
     max-height: 300px;
     flex-direction: row;
@@ -215,49 +194,7 @@ p, a, input, label, legend, select {
     overflow-y: hidden;
     gap: 1.5rem;
 }
-#order-nav.scroll-container {
-    padding: 0 1rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    width: 100%;
-    display: block;
-}
-#order-nav .scroll-element {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0;
-    width: fit-content;
-    min-width: 100%;
-    scroll-padding-right: 0;
-}
-#order-nav .scroll-item {
-    padding: 0;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    flex-shrink: 0;
-    white-space: nowrap;
-}
-#order-nav .scroll-item i{
-    margin-left: 1rem;
-    margin-right: 1rem;
-    font-size: 2rem;
-    align-content: center;
-}
-#order-nav .scroll-item a {
-    display: flex;
-    margin-right: 0;
-    align-items: center;
-    font-size: 1.5rem;
-}
-#order-form nav.scroll-container::-webkit-scrollbar,
-#order-nav .scroll-element::-webkit-scrollbar {
-    display: none;
-}
+
 .scroll-arrow {
     top: 50%;
     right: 0;
@@ -383,31 +320,37 @@ p, a, input, label, legend, select {
 }
 #global-header nav{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: auto;
     grid-template-rows: auto auto;
 }
-#website-logo {
+.logo-link {
     grid-row: 1 / 2;
-    grid-column: 1 / 2;
+    width: 65px;
+    justify-self: flex-start;
 }
-#website-logo img {
-    width: 80px;
-    padding: 0.5rem;
+#website-logo {
+    max-width: 65px;
+    width: 65px;
+    height: auto; 
+}
+.right-header {
+    justify-self: flex-end;
+    grid-row: 1 / 2;
+    flex-wrap: wrap;
 }
 #header-menu {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
     align-self: center;
-    justify-self: flex-end;
 }
 #burger-menu {
     display: none;
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
 }
 #burger-menu.show {
     display: flex;
     max-height: 500px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    margin-left: auto;
+    font-weight: bold;
 }
 #burger-menu li a{
     text-wrap: nowrap;
@@ -427,6 +370,9 @@ p, a, input, label, legend, select {
 #global-footer section {
     width: 100%;
     padding: 1rem;
+}
+#global-footer h3 {
+    text-transform: uppercase;
 }
 #footer-countries {
     grid-row: 1 / 2;
@@ -530,6 +476,56 @@ p, a, input, label, legend, select {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
 }
+
+#order-form .scroll-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+#order-form .scroll-element {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+}
+#order-form .scroll-item {
+    scroll-snap-align: start;
+    white-space: nowrap;
+}
+#order-form .scroll-container button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: black;
+    transform: translateY(-50%);
+    z-index: 10;
+    top: 50%;
+    position: absolute;
+}
+#order-form .scroll-container .prev {
+    left: 0;
+}
+
+#order-form .scroll-container .next {
+    right: 0;
+}
+.scroll-container .hidden {
+    display: none;
+}
+
+.scroll-element {
+    scrollbar-width: none; 
+}
+.scroll-element::-webkit-scrollbar {
+    display: none; 
+}
+
 #order-form {
     gap: 2rem;
     justify-self: center;
@@ -613,6 +609,7 @@ p, a, input, label, legend, select {
     min-height: 500px;
     border-radius: 20px;
     margin-bottom: 5rem;
+    gap: 1rem;
 }
 #deal-section article {
     display: flex;
@@ -621,17 +618,27 @@ p, a, input, label, legend, select {
     min-height: 100px;
     min-width: 300px;
     background-color: #52d3f0;
-    padding: 3rem;
+    padding: 3rem 4rem;
     margin: 0 auto;
     border-radius: 0 35px 0 35px;
     justify-self: center;
     align-self: center;
 }
+#deal-section article h4 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+#deal-price {
+    font-size: 2rem;
+    font-weight: 900;
+}
 #deal-section .button {
     display: inline-block;
     position: absolute;
-    bottom: -60px;
+    bottom: -70px;
     right: 0px;
+    padding: 1rem;
+    font-weight: bold;
 }
 #sale-section {
     padding: 1rem;
@@ -838,11 +845,12 @@ p, a, input, label, legend, select {
     }
     .article-cards {
         padding-bottom: 1rem;
-        margin: 0 auto;
+        margin-bottom: 20px;
 
         h3 {
-            margin: 0;
+            margin-bottom: 20px;
             padding-bottom: 0;
+            padding-top: 10px;
         }
         p {
             display: flex;
@@ -907,7 +915,7 @@ p, a, input, label, legend, select {
 }
 #choose-room .article-cards p,
 #choose-room .article-cards h3{
-    margin: 0;
+    margin: 10px;
     padding: 0 1.2rem;
 }
 #choose-room .article-cards .description {
@@ -935,37 +943,105 @@ p, a, input, label, legend, select {
 /* order page */
 .container.orderpage {
     width: 100% ;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .container.orderpage main,
 .container.orderpage section {
     width: 100%;
     max-width: 100%;
 }
+.orderpage h1 {
+    font-size: 1rem;
+}
+#breadcrumbs {
+    width: 100%;
+    background-color: #1ca2c1;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+    z-index: 10;
+    position: relative;
+    top: 0; 
+}
 
-#your-choices {
-    margin: 0 1rem;
-    max-width: 100%;
+#breadcrumbs .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    padding: 0;
+    width: 100%;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+#breadcrumbs .scroll-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+#breadcrumbs .scroll-item a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: transparent;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+#breadcrumbs .scroll-item i {
+    display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 5px;
+    color: white;
+    height: 100%;
+    padding: 0 5px
 }
-#your-choices .article-cards {
-    display: flex;
-    max-width: 100%;
-    width: 100%;
-    align-items: center;
-    padding: 1.5rem;
-    margin-top: 15px;
-    border-radius: 25px;
-    border: 1px solid #f6f5f2;
+
+#detail-button {
+    width: 95%;
+    justify-self: center;
+    align-self: center;
+    margin-top: 20px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    
 }
 #your-choices .article-cards i {
     font-size: 1.5rem;
     margin-left: 15px;
 }
-#order-nav {
-    background-color: #1ca2c1;
-    color: white;
+#detail-menu {
+    display: none;
 }
+#detail-menu.show {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 95%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #f6f5f2;
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+#detail-menu img, #detail-menu h3, #your-choices-description, #detail-menu p{
+    padding: 1rem;
+    margin: 0;
+}
+#detail-menu span {
+    padding-left: 1rem;
+}
+
 #final-order {
     box-sizing: border-box;
     padding: 0 1rem;
@@ -995,7 +1071,7 @@ p, a, input, label, legend, select {
     vertical-align: middle; 
     margin: 0;
 }
-.order-section input, 
+.order-section input,
 .order-section select {
     box-sizing: border-box;
     background-color: white;
@@ -1003,6 +1079,7 @@ p, a, input, label, legend, select {
     border-radius: 10px;
     border: none;
     margin-bottom: 20px;
+    width: 100%; /* 100% width for inputs */
 }
 .order-section label, 
 .order-section legend {
@@ -1029,7 +1106,7 @@ p, a, input, label, legend, select {
     width: 100%;
     display: grid;
     gap: 5rem;
-    grid-template-columns: 3fr 1fr 4fr;
+    grid-template-columns: 3fr 2fr 4fr;
 }
 .full-width-input {
     width: 100%;
@@ -1049,6 +1126,11 @@ p, a, input, label, legend, select {
 }
 label.radio-labels {
     font-weight: normal;
+}
+.orderpage h1 {
+    padding: 1.2rem;
+    font-size: 2.2rem;
+    font-weight: bold;
 }
 
 /* desktop version */
@@ -1080,18 +1162,14 @@ label.radio-labels {
         display: flex;
         color: #1ca2c1;
         border: 1.5px solid #1ca2c1;
-        border-radius: 45px;
-        padding: 0.2rem 0.5rem;
+        border-radius: 35px;
+        padding: 10px 15px;
         height: 45px;
         align-items: center;
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
         justify-content: center;
     }
     #magnifying-glass {
-        margin-right: 1rem;
+        margin-right: 10px;
     }
     .header-buttons a span{
         align-self: center;
@@ -1106,47 +1184,57 @@ label.radio-labels {
         align-items: center;
         justify-content: center;
     }
-    
+    #header-menu {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
 
     /* desktop header and footer */
     #global-footer i, #global-header i {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         margin-right: 10px;
     }
     #global-header {
-        padding: 1rem 0.5rem;
+        padding: 0 0.5rem;
         border-bottom: 1.5px solid #f6f5f2;;
         margin-bottom: 0;
+        font-size: 1rem;
     }
     #global-header nav{
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: auto auto;
         grid-template-rows: auto auto;
         gap: 0;
     }
-    #website-logo {
+    .logo-link {
         grid-row: 1 / 3;
         grid-column: 1 / 2;
-    }
-    #website-logo img {
         width: 100px;
-        padding: 0.5rem;
+        padding: 10px;
+    }
+    #website-logo {
+        min-width: 90px;
+        height: auto; 
+        width: 100%;
     }
     #header-menu {
         grid-row: 1 / 2;
-        grid-column: 2 / 3;
+        grid-template-columns: 2 / 3;
         align-self: center;
         justify-self: flex-end;
     }
     #burger-menu {
-        grid-row: 2 / 3;
         grid-column: 2 / 3;
+        grid-row: 2 / 3;
         align-self: center;
         justify-self: flex-end;
         margin-right: 0.5rem;
         gap: 1.5rem;
         font-weight: 600;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-right: 1rem;
     }
     #burger-menu li a{
         text-wrap: nowrap;
@@ -1386,6 +1474,13 @@ label.radio-labels {
         font-size: 0.9rem;
         margin: 0;
     }
+    #deal-section {
+        position: relative;
+    }
+    #deal-section article {
+        left: 200px;
+        top: -100px;
+    }
 
     
     /* desktop hotel page */
@@ -1495,5 +1590,219 @@ label.radio-labels {
         max-width: 100%;
         max-height: 100%;
     }
-    /* desktop order page */
+     /* desktop order page */
+     .orderpage {
+        max-width: 1400px; 
+        margin: 0 auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .orderpage main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    #breadcrumbs {
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 10px 0;
+        max-width: 1000px;
+        width: 100%;
+        background-color: #1ca2c1;
+    }
+
+    #breadcrumbs .scroll-container {
+        display: flex;
+        overflow: hidden;
+        white-space: normal;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #first-order label,
+    #second-order label {
+        margin-bottom: 1rem;
+    }
+
+    #first-order input,
+    #second-order input {
+        width: 100%; /* Make inputs take up 100% of the container */
+        padding: 0.8rem;
+        box-sizing: border-box;
+    }
+
+    #your-choices {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        overflow: hidden; /* Prevent any overflow in this section */
+    }
+
+    #final-order-form {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    #your-choices {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        align-self: flex-start;
+        overflow: hidden; /* Prevent overflow in the your-choices section */
+    }
+
+    #detail-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #your-choices-description,
+    #sun-icons {
+        align-self: flex-start;
+    }
+
+    #your-choices .article-cards p i {
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    #your-choices #sun-icons i {
+        margin-right: 15px;
+    }
+
+    #detail-button {
+        display: none;
+    }
+
+    #first-order {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(6, auto);
+        gap: 2rem;
+        position: relative;
+        width: 100%;
+    }
+
+    .first-name-grid {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    .last-name-grid {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    #birthdate-one {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+    }
+
+    #gender-one {
+        grid-row: 3 / 4;
+        grid-column: 1 / 3;
+    }
+
+    .email-grid {
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+    }
+
+    .telephone-grid {
+        grid-row: 4 / 5;
+        grid-column: 2 / 3;
+    }
+
+    .address-grid {
+        grid-row: 5 / 6;
+        grid-column: 1 / 2;
+    }
+
+    .zip-code-grid {
+        grid-row: 5 / 6;
+        grid-column: 2 / 3;
+    }
+
+    .city-grid {
+        grid-row: 6 / 7;
+        grid-column: 1 / 2;
+    }
+
+    .country-grid {
+        grid-row: 6 / 7;
+        grid-column: 2 / 3;
+    }
+
+    #second-order {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(3, auto);
+        gap: 2rem;
+        position: relative;
+        width: 100%;
+    }
+
+    .first-name-two-grid {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    .last-name-two-grid {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    #birthdate-two {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+    }
+
+    #gender-two {
+        grid-row: 3 / 4;
+    }
+
+    /* Prevent overflow for all inputs and labels */
+    .order-section label {
+        z-index: 2;
+    }
+
+    #first-name,
+    #last-name,
+    #e-mail,
+    #telephone,
+    #address,
+    #zip-code,
+    #city,
+    #country,
+    #first-name-two,
+    #last-name-two {
+        position: relative;
+        z-index: 0;
+        margin-top: 1rem;
+    }
+
+    #gender-one {
+        margin: 0;
+    }
+
+    #birthdate-one,
+    #birthdate-two {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    #birthdate-one input,
+    #birthdate-two input {
+        margin-bottom: 0;
+    }
 }
+   

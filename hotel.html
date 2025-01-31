@@ -18,18 +18,18 @@
     <div class="container hotelpage">
         <header id="global-header">
             <nav>
-                <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
-                <ul class="flex-menu" id="header-menu">
-                    <li id="magnifying-glass"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li class="header-buttons desktop hidden"><a href="#">Opprett en konto</a></li>
-                    <li class="header-buttons"><a href="#"><i class="fa-regular fa-circle-user"></i><span class="desktop hidden">Min side</span></a></li>
-                    <li><button class="button-burger"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
+                <a href="index.html" class="logo-link" aria-label="Go to homepage"><img src="img/fav.png" alt="Logo for website" id="website-logo"></a>
+                <ul class="flex-menu right-header" id="header-menu">
+                    <li id="magnifying-glass"><a href="#" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li class="header-buttons desktop hidden"><a href="order.html" aria-label="Create account">Opprett en konto</a></li>
+                    <li class="header-buttons"><a href="order.html" aria-label="Go to user profile"><i class="fa-regular fa-circle-user"></i><span class="desktop hidden">Min side</span></a></li>
+                    <li><button class="button-burger" aria-label="Open navigation menu"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
                 </ul>
-                <ul class="flex-menu" id="burger-menu">
-                    <li><a href="#tips-og-inspo">Tips og inspirasjon</a></li>
-                    <li><a href="hotel.html">Hotell</a></li>
-                    <li><a href="https://www.norwegian.no/" target="_blank">Fly</a></li>
-                    <li><a href="#global-footer">Kontakt</a></li>
+                <ul class="flex-menu right-header" id="burger-menu" aria-label="Burger menu">
+                    <li><a href="index.html#tips-og-inspo" aria-label="Go to tips and inspiration">Tips og inspirasjon</a></li>
+                    <li><a href="hotel.html" aria-label="Go to hotel page">Hotell</a></li>
+                    <li><a href="https://www.norwegian.no/" target="_blank" aria-label="Go to Norwegian Airlines website">Fly</a></li>
+                    <li><a href="#global-footer" aria-label="Go to contact section">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
@@ -38,62 +38,62 @@
                 <section id="photo-gallery">
                     <h2 class="hidden">Bildegalleri</h2>
                     <picture class="slides" id="picture-one">
-                        <img src="img/landscape-2016308_640.jpg" alt="#remember">
+                        <img src="img/landscape-2016308_640.jpg" alt="Beautiful landscape view">
                     </picture>
                     <picture class="slides" id="picture-two">
-                        <img src="img/beach-666122_640.jpg" alt="#remember">
+                        <img src="img/beach-666122_640.jpg" alt="Beach hut">
                     </picture>
                     <picture class="slides" id="picture-three">
-                        <img src="img/holiday-2733322_1280.jpg" alt="#remember">
+                        <img src="img/holiday-2733322_1280.jpg" alt="Holiday setting">
                     </picture>
                     <picture class="slides" id="picture-four">
-                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                        <img src="img/beach-6514331_640.jpg" alt="Landscape">
                     </picture>
                     <picture class="slides" id="picture-five">
-                        <img src="img/beach-1836467_640.jpg" alt="#remember">
+                        <img src="img/beach-1836467_640.jpg" alt="Beach">
                     </picture>
                     <picture class="slides" id="picture-six">
-                        <img src="img/sea-4768869_1920.jpg" alt="#remember">
+                        <img src="img/sea-4768869_1920.jpg" alt="View of the sea">
                     </picture>
-                    <button class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="next" onclick="plusSlides(+1)"><i class="fa-solid fa-chevron-right"></i></button>
-                    <button id="heart"><i class="fa-regular fa-heart"></i></button>
-                    <button id="image-count"><i class="fa-regular fa-images"></i><span>49</span></button>
+                    <button class="prev" aria-label="Previous image" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="next" aria-label="Next image"  onclick="plusSlides(+1)"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button id="heart"  aria-label="Add to favorites"><i class="fa-regular fa-heart"></i></button>
+                    <button id="image-count" aria-label="Show image count"><i class="fa-regular fa-images"></i><span>49</span></button>
                 </section>
                 <nav>
                     <ul class="flex-menu" id="hoteltabs">
-                        <li class="active"><a href="#summary">Oversikt</a></li>
-                        <li><a href="#facilities">Fasiliteter</a></li>
-                        <li><a href="#choose-room">Rom</a></li>
+                        <li class="active"><a href="#summary" aria-label="Go to overview section">Oversikt</a></li>
+                        <li><a href="#facilities" aria-label="Go to facilities section">Fasiliteter</a></li>
+                        <li><a href="#choose-room" aria-label="Go to room selection section">Rom</a></li>
                     </ul>
                 </nav>
             </header>
             <section id="summary">
                 <h2>Parga beach</h2>
-                <p id="sun-icons"><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-regular fa-sun"></i></p>
-                <p class="rating"><span>8.9</span>  Fantastisk</p>
-                <a class="blue-links" href="#">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
+                <p id="sun-icons"><i class="fa-solid fa-sun" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i><i class="fa-regular fa-sun" aria-hidden="true"></i></p>
+                <p class="rating"><span>8.9</span> Fantastisk</p>
+                <a class="blue-links" href="#" aria-label="See all reviews">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
             </section>
             <section id="facilities">
                 <h2>Fasiliteter</h2>
                 <p id="description">Parga Beach tilbyr et tilsynelatende uuttømmelig utvalg av sport og aktiviteter 
                     og lokker til seg så vel eliteutøvere som aktive familier og hverdagsmosjonister 
                     - i alle aldre og på alle nivåer.</p>
-                <p id="facilityone"><i class="fa-solid fa-paw"></i> Kjæledyr-vennelig<br>
-                    <i class="fa-solid fa-mug-hot"></i> Frokost<br>
-                    <i class="fa-solid fa-spa"></i> Spa
+                <p id="facilityone"><i class="fa-solid fa-paw" aria-hidden="true"></i> Kjæledyr-vennelig<br>
+                    <i class="fa-solid fa-mug-hot" aria-hidden="true"></i> Frokost<br>
+                    <i class="fa-solid fa-spa" aria-hidden="true"></i> Spa
                 </p>
-                <p id="facilitytwo"><i class="fa-solid fa-bell-concierge"></i> Romservice<br>
-                    <i class="fa-solid fa-martini-glass"></i> Bar<br>
-                    <i class="fa-solid fa-dumbbell"></i> Treningssenter
+                <p id="facilitytwo"><i class="fa-solid fa-bell-concierge" aria-hidden="true"></i> Romservice<br>
+                    <i class="fa-solid fa-martini-glass" aria-hidden="true"></i> Bar<br>
+                    <i class="fa-solid fa-dumbbell" aria-hidden="true"></i> Treningssenter
                 </p>
-                <a class="blue-links" href="#">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
+                <a class="blue-links" href="#" aria-label="See all facilities">Se alle anmeldelsene <i class="fa-solid fa-chevron-right"></i></a>
             </section>
             <section id="choose-room">
                 <h2>Velg rom</h2>
                 <article class="article-cards">
                     <picture>
-                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                        <img src="img/beach-6514331_640.jpg" alt="Room image">
                     </picture>
                     <h3>Junior Suite</h3>
                     <p class="bed-info">Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
@@ -103,7 +103,7 @@
                 </article>
                 <article class="article-cards">
                     <picture>
-                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                        <img src="img/beach-6514331_640.jpg" alt="Room image">
                     </picture>
                     <h3>Junior Suite</h3>
                     <p class="bed-info">Plass til 2 <span class="dot">&#x2022;</span> Queen size-seng</p>
@@ -113,7 +113,7 @@
                 </article>
                 <article class="article-cards">
                     <picture>
-                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                        <img src="img/beach-6514331_640.jpg" alt="Room image">
                     </picture>
                     <h3>Junior Suite</h3>
                     <p class="bed-info">Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
@@ -123,7 +123,7 @@
                 </article>
                 <article class="article-cards">
                     <picture>
-                        <img src="img/beach-6514331_640.jpg" alt="#remember">
+                        <img src="img/beach-6514331_640.jpg" alt="Room image">
                     </picture>
                     <h3>Junior Suite</h3>
                     <p class="bed-info">Plass til 2  <span class="dot">&#x2022;</span> Queen size-seng</p>
@@ -134,7 +134,7 @@
             </section>
             <aside id="map">
                 <h2>Utforsk området</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5806.814338490057!2d20.38392041975443!3d39.28621533916043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135c632e49c7cda5%3A0x9406a292c1e28ae2!2sParga%20Beach%20Resort!5e0!3m2!1sen!2sno!4v1737832892167!5m2!1sen!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5806.814338490057!2d20.38392041975443!3d39.28621533916043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135c632e49c7cda5%3A0x9406a292c1e28ae2!2sParga%20Beach%20Resort!5e0!3m2!1sen!2sno!4v1737832892167!5m2!1sen!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map showing Parga Beach Resort location"></iframe>
             </aside>
             <aside id="choose-room-button">
                 <h2 class="hidden">Chosen room</h2>
@@ -145,7 +145,7 @@
         <footer id="global-footer">
             <section id="footer-countries">
                 <h3 class="hidden">Land</h3>
-                <ul class="flex-menu" id="flag-menu">
+                <ul class="flex-menu" id="flag-menu" aria-label="List of countries">
                     <li><img src="flags/sweden.png" alt="Flag of Sweden">Sverige</li>
                     <li><img src="flags/denmark.png" alt="Flag of Denmark">Danmark</li>
                     <li><img src="flags/norway.png" alt="Flag of Norway">Norge</li>
@@ -155,17 +155,17 @@
             </section>
             <section id="footer-payment">
                 <h3>Betalingsmetoder</h3>
-                <ul class="flex-menu">
-                    <li><i class="fa-brands fa-cc-visa"></i></li>
-                    <li><i class="fa-brands fa-cc-mastercard"></i></li>
-                    <li><i class="fa-brands fa-cc-paypal"></i></li>
-                    <li><i class="fa-brands fa-cc-apple-pay"></i></li>
-                    <li><i class="fa-brands fa-cc-amazon-pay"></i></li>
+                <ul class="flex-menu" aria-label="Payment methods">
+                    <li><i class="fa-brands fa-cc-visa"  aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-mastercard"  aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-paypal"  aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-apple-pay"  aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-amazon-pay" aria-hidden="true"></i></li>
                 </ul>
             </section>
             <section id="footer-news">
                 <h3>Nyheter og tilbud</h3>
-                <form class="border-container">
+                <form class="border-container" aria-label="Newsletter sign-up">
                     <label for="email" class="text-labels">Meld deg på nyhetsbrev her</label>
                     <input class="border-style" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
                     <input class="button yellow" type="submit" value="Send" id="email-send">
@@ -178,7 +178,7 @@
                     <li><a href="#">Spørsmål og Svar</a></li>
                     <li><a href="#">Chat</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Tilgjengelighetserklæring</a></li>
+                    <li><a href="Tilgjengelighetserlaering.pdf">Tilgjengelighetserklæring</a></li>
                 </ul>
             </section>
             <section id="footer-socialmedia">
@@ -280,7 +280,7 @@
                 }
             } 
             else{
-                showDivs(slideIndex);
+                showSlides(slideIndex);
             }
         }
 

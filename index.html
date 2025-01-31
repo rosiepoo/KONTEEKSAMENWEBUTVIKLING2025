@@ -18,14 +18,14 @@
     <div class="container frontpage">
         <header id="global-header">
             <nav>
-                <a href="index.html" id="website-logo"><img src="img/fav.png" alt="Logo for website"></a>
-                <ul class="flex-menu" id="header-menu">
+                <a href="index.html" class="logo-link"><img src="img/fav.png" alt="Logo for website" id="website-logo"></a>
+                <ul class="flex-menu right-header" id="header-menu">
                     <li id="magnifying-glass"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li class="header-buttons desktop hidden"><a href="#">Opprett en konto</a></li>
-                    <li class="header-buttons"><a href="#"><i class="fa-regular fa-circle-user"></i><span class="desktop hidden">Min side</span></a></li>
+                    <li class="header-buttons desktop hidden"><a href="order.html">Opprett en konto</a></li>
+                    <li class="header-buttons"><a href="order.html"><i class="fa-regular fa-circle-user"></i><span class="desktop hidden">Min side</span></a></li>
                     <li><button class="button-burger" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button></li>
                 </ul>
-                <ul class="flex-menu" id="burger-menu">
+                <ul class="flex-menu right-header" id="burger-menu">
                     <li><a href="#tips-og-inspo">Tips og inspirasjon</a></li>
                     <li><a href="hotel.html">Hotell</a></li>
                     <li><a href="https://www.norwegian.no/" target="_blank">Fly</a></li>
@@ -105,7 +105,7 @@
                 <article>
                     <h4>Bestill sommerens beste uke</h4>
                     <p>Fly + hotell, 7 dager</p>
-                    <p>Fra 3 298,-</p>
+                    <p id="deal-price">Fra 3 298,-</p>
                     <a href="hotel.html" class="button yellow">Bestill i dag</a>
                 </article>
             </section>
@@ -215,7 +215,7 @@
                     <li><a href="#">Spørsmål og Svar</a></li>
                     <li><a href="#">Chat</a></li>
                     <li><a href="#">Kontakt</a></li>
-                    <li><a href="#">Tilgjengelighetserklæring</a></li>
+                    <li><a href="Tilgjengelighetserlaering.pdf">Tilgjengelighetserklæring</a></li>
                 </ul>
             </section>
             <section id="footer-socialmedia">
@@ -236,6 +236,45 @@
             let menu = document.getElementById("burger-menu");
             menu.classList.toggle("show");
         }
+
+        /* scroll tabs */
+        const prevButton2 = document.querySelector('.mobile.prev');
+        const nextButton2 = document.querySelector('.mobile.next');
+        const scrollElement = document.querySelector('.scroll-element');
+
+        function checkArrows() {
+            const scrollLeft = scrollElement.scrollLeft;
+            const scrollWidth = scrollElement.scrollWidth;
+            const clientWidth = scrollElement.clientWidth;
+
+            if (window.innerWidth <= 768) {
+                if (scrollLeft > 0) {
+                    prevButton2.classList.remove('hidden');
+                } else {
+                    prevButton2.classList.add('hidden');
+                }
+
+                if (scrollLeft < scrollWidth - clientWidth) {
+                    nextButton2.classList.remove('hidden');
+                } else {
+                    nextButton2.classList.add('hidden');
+                }
+            }
+        }
+
+        prevButton2.addEventListener('click', () => {
+            scrollElement.scrollBy({ left: -200, behavior: 'smooth' });
+        });
+
+        nextButton2.addEventListener('click', () => {
+            scrollElement.scrollBy({ left: 200, behavior: 'smooth' });
+        });
+
+        scrollElement.addEventListener('scroll', checkArrows);
+        window.addEventListener('resize', checkArrows);
+
+        checkArrows();
+
 
         /*form tabs*/
         const navItems = document.querySelectorAll('#formtabs li');
