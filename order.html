@@ -18,103 +18,103 @@
     <div class="container orderpage">
         <header id="global-header">
             <nav>
-                <a href="index.html" class="logo-link"><img src="img/fav.png" alt="Logo for website" id="website-logo"></a>
+                <a href="index.html" class="logo-link" aria-label="Go to homepage"><img src="img/fav.png" alt="Logo for website" id="website-logo"></a>
                 <ul class="flex-menu right-header" id="header-menu">
-                    <li id="magnifying-glass"><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li class="header-buttons desktop hidden"><a href="order.html">Opprett en konto</a></li>
-                    <li class="header-buttons"><a href="order.html"><i class="fa-regular fa-circle-user"></i><span class="desktop hidden">Min side</span></a></li>
-                    <li><button class="button-burger"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
+                    <li id="magnifying-glass"><a href="#" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li class="header-buttons desktop hidden"><a href="order.html" aria-label="Create account">Opprett en konto</a></li>
+                    <li class="header-buttons"><a href="order.html" aria-label="Go to user profile"><i class="fa-regular fa-circle-user"></i><span class="desktop hidden">Min side</span></a></li>
+                    <li><button class="button-burger" aria-label="Open navigation menu"><i class="fa-solid fa-bars" onclick="toggleMenu()"></i></button></li>
                 </ul>
-                <ul class="flex-menu right-header" id="burger-menu">
-                    <li><a href="index.html#tips-og-inspo">Tips og inspirasjon</a></li>
-                    <li><a href="hotel.html">Hotell</a></li>
-                    <li><a href="https://www.norwegian.no/" target="_blank">Fly</a></li>
-                    <li><a href="#global-footer">Kontakt</a></li>
+                <ul class="flex-menu right-header" id="burger-menu" aria-label="Burger menu">
+                    <li><a href="index.html#tips-og-inspo" aria-label="Go to tips and inspiration">Tips og inspirasjon</a></li>
+                    <li><a href="hotel.html" aria-label="Go to hotel page">Hotell</a></li>
+                    <li><a href="https://www.norwegian.no/" target="_blank" aria-label="Go to Norwegian Airlines website">Fly</a></li>
+                    <li><a href="#global-footer" aria-label="Go to contact section">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
-        <nav id="breadcrumbs">
+        <nav id="breadcrumbs" aria-label="Breadcrumb navigation">
             <ol class="scroll-container" itemscope itemtype="https://schema.org/BreadcrumbList">
                 <li class="scroll-item" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="index.html#order-form">
                     <span itemprop="name">Søk</span></a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <meta itemprop="position" content="1" />
+                    <meta itemprop="position" content="1">
                 </li>
                 <li class="scroll-item" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="hotel.html">
                     <span itemprop="name">Søkeresultater</span></a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <meta itemprop="position" content="2" />
+                    <meta itemprop="position" content="2">
                 </li>
                 <li class="scroll-item" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="hotel.html#choose-rom">
+                    <a itemprop="item" href="hotel.html#choose-room">
                     <span itemprop="name">Romtype</span></a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <meta itemprop="position" content="3" />
+                    <meta itemprop="position" content="3">
                 </li>
                 <li class="scroll-item" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="https:://www.norwegian.no/" target="_blank">
+                    <a itemprop="item" href="https://www.norwegian.no/" target="_blank">
                     <span itemprop="name">Fly</span></a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <meta itemprop="position" content="4" />
+                    <meta itemprop="position" content="4">
                 </li>
                 <li class="scroll-item" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="#">
                     <span itemprop="name">Tillegg</span></a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <meta itemprop="position" content="5" />
+                    <meta itemprop="position" content="5">
                 </li>
                 <li class="scroll-item" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="order.html">
                     <span itemprop="name">Opplysninger</span></a>
                     <i class="fa-solid fa-chevron-right"></i>
-                    <meta itemprop="position" content="6" />
+                    <meta itemprop="position" content="6">
                 </li>
                 <li class="scroll-item" itemprop="itemListElement" itemscope
                     itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="#final-step">
                     <span itemprop="name">Bestill</span></a>
                     <i class="hidden-two fa-solid fa-chevron-right"></i>
-                    <meta itemprop="position" content="7" />
+                    <meta itemprop="position" content="7">
                 </li>
             </ol>
         </nav>
         <main>
             <section id="your-choices">
-                <h2 id="detail-button">Dine valg<button><i class="fa-solid fa-chevron-right" onclick="toggleDetail()"></i></button></h2>
-                <article class="article-cards" id="detail-menu">
+                <h2 id="detail-button" aria-label="Your choices section">Dine valg<button><i class="fa-solid fa-chevron-right" onclick="toggleDetail()"></i></button></h2>
+                <article class="article-cards" id="detail-menu" aria-expanded="false">
                     <picture>
-                        <img src="img/landscape-2016308_640.jpg" alt="#remember">
+                        <img src="img/landscape-2016308_640.jpg" alt="Parga beach destination">
                     </picture>
                     <h3>Parga beach</h3>
-                        <p id="sun-icons"><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-solid fa-sun"></i><i class="fa-regular fa-sun"></i></p>
+                        <p id="sun-icons"><i class="fa-solid fa-sun" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i><i class="fa-solid fa-sun" aria-hidden="true"></i><i class="fa-regular fa-sun" aria-hidden="true"></i></p>
                         <p id="your-choices-description">
-                            <i class="fa-solid fa-location-dot"></i><span>Hellas, Parga</span><br>
-                            <i class="fa-regular fa-calendar"></i><span>Man 5. mai - Man 12. mai 2025</span><br>
-                            <i class="fa-regular fa-user-large"></i><span>2 Voksne</span><br>
-                            <i class="fa-solid fa-bed"></i><span>Deluxerom, Balkong og ikke spsifisert utsikt.</span><br>
-                            <i class="fa-solid fa-utensils"></i><span>Frokostbuffé</span><br>
-                            <i class="fa-solid fa-plane-departure"></i><span>Oslo Lufthavn &#8213; Preveza</span><br>
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Hellas, Parga</span><br>
+                            <i class="fa-regular fa-calendar" aria-hidden="true"></i><span>Man 5. mai - Man 12. mai 2025</span><br>
+                            <i class="fa-regular fa-user-large" aria-hidden="true"></i><span>2 Voksne</span><br>
+                            <i class="fa-solid fa-bed" aria-hidden="true"></i><span>Deluxerom, Balkong og ikke spsifisert utsikt.</span><br>
+                            <i class="fa-solid fa-utensils" aria-hidden="true"></i><span>Frokostbuffé</span><br>
+                            <i class="fa-solid fa-plane-departure" aria-hidden="true"></i><span>Oslo Lufthavn &#8213; Preveza</span><br>
                             22 003,-<br>
                             19 803,-
                         </p>
                 </article>
             </section>
             <section id="final-order-form">
-                <h1>Oppgi dine bestillingsopplysninger</h1>
-                <form id="final-order" action="#" method="POST">
+                <h1 aria-label="Final order form">Oppgi dine bestillingsopplysninger</h1>
+                <form id="final-order" action="#" method="POST" aria-labelledby="final-order-form">
                     <fieldset class="order-section" id="first-order">
                         <legend class="big-legend">Voksen 18+ hovedbestiller</legend>
-                        <label class="first-name-grid" for="first-name">Fornavn (ifølge pass):</label>
+                        <label class="first-name-grid" for="first-name" aria-label="First name (as per passport)">Fornavn (ifølge pass):</label>
                         <input class="first-name-grid full-width-input" type="text" id="first-name" name="first-name" required>
-                        <label class="last-name-grid" for="last-name">Etternavn (ifølge pass):</label>
+                        <label class="last-name-grid" for="last-name" aria-label="Last name (as per passport)">Etternavn (ifølge pass):</label>
                         <input class="last-name-grid full-width-input" type="text" id="last-name" name="last-name" required>
                         <fieldset class="birthdate" id="birthdate-one">
                             <legend>Fødselsdato:</legend>
@@ -124,39 +124,39 @@
                         </fieldset>
                         <fieldset id="gender-one">
                             <legend>Kjønn:</legend>
-                            <label for="female" class="radio-labels">
+                            <label for="female" class="radio-labels" aria-label="Radio for female">
                                 <input type="radio" id="female" name="gender" value="female" required>
                                 Kvinne
                             </label>
-                            <label for="male" class="radio-labels">
+                            <label for="male" class="radio-labels" aria-label="Radio for male">
                                 <input type="radio" id="male" name="gender" value="male" required>
                                 Mann
                             </label>
                         </fieldset>
-                        <label class="email-grid" for="e-mail">E-postadresse:</label>
+                        <label class="email-grid" for="e-mail" aria-label="E-mail">E-postadresse:</label>
                         <input class="email-grid full-width-input" type="email" id="e-mail" name="e-mail" required>
-                        <label class="telephone-grid" for="telephone">Telefonnummer:</label>
+                        <label class="telephone-grid" for="telephone" aria-label="Phonenumber">Telefonnummer:</label>
                         <input class="telephone-grid full-width-input"  type="tel" id="telephone" name="telephone" required>
-                        <label class="address-grid" for="address">Gateadresse:</label>
+                        <label class="address-grid" for="address" aria-label="Street address">Gateadresse:</label>
                         <input class="address-grid full-width-input" type="text" id="address" name="address" required>
-                        <label class="zip-code-grid" for="zip-code" class="post-address">Postnummer</label>
+                        <label class="zip-code-grid" for="zip-code" aria-label="Zip code">Postnummer</label>
                         <input class="zip-code-grid full-width-input" type="number" id="zip-code" name="zip-code" required min="1000" max="9999">
-                        <label class="city-grid" for="city">City</label>
+                        <label class="city-grid" for="city" aria-label="City">City</label>
                         <input class="city-grid full-width-input" type="text" id="city" name="city" required>
-                        <label class="country-grid" for="country">Land:</label>
+                        <label class="country-grid" for="country" aria-label="Country">Land:</label>
                         <select class="country-grid full-width-input" id="country" name="country" required>
                             <option value="" disabled selected>Velg et land...</option>
                             <option value="norway">Norge</option>
-                            <option value="torpSAirport">Torp Sandefjord Lufthavn</option>
-                            <option value="bergenAirport">Bergen Lufthavn</option>
-                            <option value="altaAirport">Alta Lufthavn</option>
+                            <option value="sweden">Sverige</option>
+                            <option value="denmark">Denmark</option>
+                            <option value="finland">Finland</option>
                         </select>
                     </fieldset>
                     <fieldset class="order-section" id="second-order">
                         <legend class="big-legend">Voksen 18+</legend>
-                        <label class="first-name-two-grid" for="first-name-two">Fornavn (ifølge pass):</label>
+                        <label class="first-name-two-grid" for="first-name-two" aria-label="First name of second adult (as per passport)">Fornavn (ifølge pass):</label>
                         <input class="first-name-two-grid full-width-input" type="text" id="first-name-two" name="first-name-two" required>
-                        <label class="last-name-two-grid" for="last-name-two">Etternavn (ifølge pass):</label>
+                        <label class="last-name-two-grid" for="last-name-two" aria-label="Last name of second adult (as per passport)">Etternavn (ifølge pass):</label>
                         <input class="last-name-two-grid full-width-input" type="text" id="last-name-two" name="last-name-two" required>
                         <fieldset class="birthdate" id="birthdate-two">
                             <legend>Fødselsdato:</legend>
@@ -176,7 +176,7 @@
                             </label>
                         </fieldset>
                     </fieldset>
-                    <label id="final-step" class="submit-btn">
+                    <label id="final-step" class="submit-btn" aria-label="Submit order">
                         Siste trinn <i class="fa-solid fa-arrow-right"></i>
                         <input type="submit" style="display: none;">
                     </label>
@@ -186,7 +186,7 @@
         <footer id="global-footer">
             <section id="footer-countries">
                 <h3 class="hidden">Land</h3>
-                <ul class="flex-menu" id="flag-menu">
+                <ul class="flex-menu" id="flag-menu" aria-label="List of countries">
                     <li><img src="flags/sweden.png" alt="Flag of Sweden">Sverige</li>
                     <li><img src="flags/denmark.png" alt="Flag of Denmark">Danmark</li>
                     <li><img src="flags/norway.png" alt="Flag of Norway">Norge</li>
@@ -196,17 +196,17 @@
             </section>
             <section id="footer-payment">
                 <h3>Betalingsmetoder</h3>
-                <ul class="flex-menu">
-                    <li><i class="fa-brands fa-cc-visa"></i></li>
-                    <li><i class="fa-brands fa-cc-mastercard"></i></li>
-                    <li><i class="fa-brands fa-cc-paypal"></i></li>
-                    <li><i class="fa-brands fa-cc-apple-pay"></i></li>
-                    <li><i class="fa-brands fa-cc-amazon-pay"></i></li>
+                <ul class="flex-menu" aria-label="Payment methods">
+                    <li><i class="fa-brands fa-cc-visa" aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-paypal" aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-apple-pay" aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-amazon-pay" aria-hidden="true"></i></li>
                 </ul>
             </section>
             <section id="footer-news">
                 <h3>Nyheter og tilbud</h3>
-                <form class="border-container">
+                <form class="border-container" aria-label="Newsletter sign-up">
                     <label for="email" class="text-labels">Meld deg på nyhetsbrev her</label>
                     <input class="border-style" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
                     <input class="button yellow" type="submit" value="Send" id="email-send">

@@ -182,7 +182,7 @@
         <footer id="global-footer">
             <section id="footer-countries">
                 <h3 class="hidden">Land</h3>
-                <ul class="flex-menu" id="flag-menu">
+                <ul class="flex-menu" id="flag-menu" aria-label="List of countries">
                     <li><img src="flags/sweden.png" alt="Flag of Sweden">Sverige</li>
                     <li><img src="flags/denmark.png" alt="Flag of Denmark">Danmark</li>
                     <li><img src="flags/norway.png" alt="Flag of Norway">Norge</li>
@@ -192,17 +192,17 @@
             </section>
             <section id="footer-payment">
                 <h3>Betalingsmetoder</h3>
-                <ul class="flex-menu">
-                    <li><i class="fa-brands fa-cc-visa"></i></li>
-                    <li><i class="fa-brands fa-cc-mastercard"></i></li>
-                    <li><i class="fa-brands fa-cc-paypal"></i></li>
-                    <li><i class="fa-brands fa-cc-apple-pay"></i></li>
-                    <li><i class="fa-brands fa-cc-amazon-pay"></i></li>
+                <ul class="flex-menu" aria-label="Payment methods">
+                    <li><i class="fa-brands fa-cc-visa" aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-mastercard" aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-paypal" aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-apple-pay" aria-hidden="true"></i></li>
+                    <li><i class="fa-brands fa-cc-amazon-pay" aria-hidden="true"></i></li>
                 </ul>
             </section>
             <section id="footer-news">
                 <h3>Nyheter og tilbud</h3>
-                <form class="border-container">
+                <form class="border-container" aria-label="Newsletter sign-up">
                     <label for="email" class="text-labels">Meld deg på nyhetsbrev her</label>
                     <input class="border-style" type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="example@hiof.no" required>
                     <input class="button yellow" type="submit" value="Send" id="email-send">
